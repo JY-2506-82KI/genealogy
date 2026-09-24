@@ -62,7 +62,9 @@
         "cemeteryLocation": "",
         "fatherId": "",
         "motherId": "",
-        "spouseIds": [],
+        "spouseIds": [
+            "dessie_clara_shomaker_844"
+        ],
         "siblingIds": [],
         "childIds": [
             "p1"
@@ -79,7 +81,9 @@
         "cemeteryLocation": "",
         "fatherId": "",
         "motherId": "",
-        "spouseIds": [],
+        "spouseIds": [
+            "marvin_howard_yates_228"
+        ],
         "siblingIds": [],
         "childIds": [
             "p1"
