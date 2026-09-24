@@ -24,7 +24,9 @@
         "cemeteryLocation": "",
         "fatherId": "",
         "motherId": "",
-        "spouseIds": [],
+        "spouseIds": [
+            "p2_dummy"
+        ],
         "siblingIds": [],
         "childIds": [
             "root"
@@ -32,14 +34,14 @@
         "bio": "Pioneer settler who moved to Missouri following the Civil War."
     },
     "p2_dummy": {
-        "name": "Mary Elizabeth Davis",
-        "dob": "15 Apr 1848",
-        "pob": "Kentucky",
-        "dod": "20 Jan 1922",
-        "pod": "Winona, MO",
-        "cemetery": "Old Salem Cemetery",
-        "cemeteryLocation": "Winona, MO",
-        "fatherId": "gp2",
+        "name": "Cathy Lynn Brawley",
+        "dob": "4/6/1964",
+        "pob": "Poplar Bluff, MO",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
         "motherId": "",
         "spouseIds": [
             "p1"
