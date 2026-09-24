@@ -23,7 +23,7 @@
         "cemetery": "",
         "cemeteryLocation": "",
         "fatherId": "marvin_howard_yates_228",
-        "motherId": "",
+        "motherId": "dessie_clara_shomaker_844",
         "spouseIds": [
             "p2_dummy"
         ],
@@ -54,6 +54,23 @@
     },
     "marvin_howard_yates_228": {
         "name": "Marvin Howard Yates",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "p1"
+        ],
+        "bio": ""
+    },
+    "dessie_clara_shomaker_844": {
+        "name": "Dessie Clara Shomaker",
         "dob": "",
         "pob": "",
         "dod": "",
