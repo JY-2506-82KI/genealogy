@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ancestral Archival Database & Pedigree</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4ecdf;
+            --paper-color: #faf5ee;
+            --border-color: #c8b99e;
+            --text-main: #2c221e;
+            --accent: #7a4f2e;
+            --accent-hover: #5a371c;
+            --gold: #b38b4d;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Lora', serif;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        h1 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent);
+            margin: 0 0 5px 0;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+        }
+        p.subtitle {
+            margin: 0 0 15px 0;
+            font-style: italic;
+            color: #5c4a3f;
+        }
+        .sync-bar {
+            background: #ede2d1;
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+        }
+        .sync-bar input {
+            padding: 5px 8px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: 'Lora', serif;
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        button.nav-btn, button.action-btn, button.small-btn {
+            background: var(--paper-color);
+            border: 1px solid var(--border-color);
+            font-family: 'Cinzel', serif;
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        button.nav-btn.active, button.nav-btn:hover, button.action-btn:hover, button.small-btn:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+        button.small-btn {
+            padding: 4px 8px;
+            font-size: 0.8rem;
+        }
+        .search-box {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background: var(--paper-color);
+            font-family: 'Lora', serif;
+            width: 250px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .view-section {
+            display: none;
+        }
+        .view-section.active {
+            display: block;
+        }
+        /* Tree View */
+        .tree-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+            padding-bottom: 50px;
+        }
+        .generation-tier-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+        }
+        .couple-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            background: #ede2d1;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+        }
+        .person-card {
+            background: var(--paper-color);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent);
+            padding: 12px 15px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 250px;
+            box-sizing: border-box;
+        }
+        .person-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background: #ffffff;
+        }
+        .person-name {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+        .person-dates {
+            font-size: 0.8rem;
+            color: #6c5a4f;
+        }
+        .card-relation-summary {
+            font-size: 0.75rem;
+            margin-top: 6px;
+            padding-top: 6px;
+            border-top: 1px solid #eee;
+            color: #5c4a3f;
+        }
+
+        /* Directory Grid */
+        .directory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        /* Forms & Inputs */
+        .form-card {
+            background: var(--paper-color);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 6px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid var(--border-color);
+            background: #fff;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: 'Lora', serif;
+        }
+        .dynamic-list-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 5px;
+        }
+        .dynamic-row-item {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        .dynamic-row-item select {
+            flex-grow: 1;
+        }
+
+        /* Side Drawer */
+        #drawer {
+            position: fixed;
+            top: 0;
+            right: -480px;
+            width: 450px;
+            height: 100%;
+            background: var(--paper-color);
+            border-left: 3px solid var(--accent);
+            box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            padding: 30px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        #drawer.open { right: 0; }
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--accent);
+            float: right;
+        }
+        .drawer-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-top: 0;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+        .section-heading {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: var(--accent);
+            margin-top: 20px;
+            margin-bottom: 5px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .detail-row {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+        .detail-label {
+            font-weight: 600;
+            color: #5c4a3f;
+            display: block;
+            font-size: 0.85rem;
+            font-family: 'Cinzel', serif;
+        }
+        .overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.3);
+            display: none; z-index: 999;
+        }
+        .overlay.active { display: block; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ancestral Archival Database</h1>
+        <p class="subtitle">Cloud-Synced via GitHub API</p>
+
+        <!-- GitHub Sync Configuration Bar -->
+        <div class="sync-bar">
+            <span><strong>GitHub Sync:</strong></span>
+            <input type="text" id="gh-owner" placeholder="Username/Org" style="width:110px;">
+            <input type="text" id="gh-repo" placeholder="Repository Name" style="width:130px;">
+            <input type="password" id="gh-token" placeholder="Personal Access Token" style="width:180px;">
+            <button class="small-btn" onclick="loadFromGitHub()">Pull from Cloud</button>
+            <span id="sync-status" style="font-style:italic; color:#5c4a3f;">Status: Not synced</span>
+        </div>
+        
+        <div class="controls">
+            <button class="nav-btn active" onclick="switchView('tree', this)">Pedigree Tree</button>
+            <button class="nav-btn" onclick="switchView('directory', this)">Master Directory</button>
+            <button class="nav-btn" onclick="switchView('add', this)">+ Add Ancestor</button>
+            <input type="text" id="searchInput" class="search-box" placeholder="Search archive..." oninput="handleSearch()">
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- VIEW 1: PEDIGREE TREE -->
+        <div id="view-tree" class="view-section active">
+            <div id="treeContainer" class="tree-container"></div>
+        </div>
+
+        <!-- VIEW 2: MASTER DIRECTORY -->
+        <div id="view-directory" class="view-section">
+            <div id="directoryGrid" class="directory-grid"></div>
+        </div>
+
+        <!-- VIEW 3: ADD ANCESTOR -->
+        <div id="view-add" class="view-section">
+            <div class="form-card">
+                <h3 style="font-family:'Cinzel',serif; color:var(--accent); margin-top:0;">Add New Ancestor</h3>
+                <div class="form-group">
+                    <label>ID Key (e.g., smith_nancy_1875)</label>
+                    <input type="text" id="new-id">
+                </div>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="new-name">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Date of Birth</label>
+                        <input type="text" id="new-dob" placeholder="12 Oct 1872">
+                    </div>
+                    <div class="form-group">
+                        <label>Place of Birth</label>
+                        <input type="text" id="new-pob" placeholder="Shannon County, MO">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Date of Death</label>
+                        <input type="text" id="new-dod" placeholder="14 May 1945">
+                    </div>
+                    <div class="form-group">
+                        <label>Place of Death</label>
+                        <input type="text" id="new-pod" placeholder="Winona, MO">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Cemetery</label>
+                        <input type="text" id="new-cemetery" placeholder="Old Salem Cemetery">
+                    </div>
+                    <div class="form-group">
+                        <label>Cemetery Location</label>
+                        <input type="text" id="new-cemetery-location" placeholder="Winona, MO">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Father</label>
+                        <select id="new-father" onchange="handleDropdownSelection(this, 'new', 'father')">
+                            <option value="">-- None / Unknown --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Mother</label>
+                        <select id="new-mother" onchange="handleDropdownSelection(this, 'new', 'mother')">
+                            <option value="">-- None / Unknown --</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Spouse(s)</label>
+                    <div id="new-spouse-container" class="dynamic-list-container"></div>
+                    <button type="button" class="small-btn" onclick="addDynamicRow('new-spouse-container', 'spouse', '', 'new')">+ Add Spouse</button>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Sibling(s)</label>
+                        <div id="new-sibling-container" class="dynamic-list-container"></div>
+                        <button type="button" class="small-btn" onclick="addDynamicRow('new-sibling-container', 'sibling', '', 'new')">+ Add Sibling</button>
+                    </div>
+                    <div class="form-group">
+                        <label>Child(ren)</label>
+                        <div id="new-child-container" class="dynamic-list-container"></div>
+                        <button type="button" class="small-btn" onclick="addDynamicRow('new-child-container', 'child', '', 'new')">+ Add Child</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Biography / Obituary Notes</label>
+                    <textarea id="new-bio" rows="3"></textarea>
+                </div>
+                <button class="action-btn" onclick="addNewPerson()">Save to Archive</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Side Drawer -->
+    <div class="overlay" id="overlay" onclick="closeDrawer()"></div>
+    <div id="drawer">
+        <button class="close-btn" onclick="closeDrawer()">&times;</button>
+        <div id="drawer-view-mode">
+            <h2 class="drawer-title" id="d-name">Name</h2>
+            
+            <div class="section-heading">Birth & Death</div>
+            <div class="detail-row"><span class="detail-label">Birth</span><span id="d-birth-info"></span></div>
+            <div class="detail-row"><span class="detail-label">Death</span><span id="d-death-info"></span></div>
+            <div class="detail-row"><span class="detail-label">Cemetery</span><span id="d-cemetery-info"></span></div>
+
+            <div class="section-heading">Family Relations</div>
+            <div class="detail-row"><span class="detail-label">Father</span><span id="d-father"></span></div>
+            <div class="detail-row"><span class="detail-label">Mother</span><span id="d-mother"></span></div>
+            <div class="detail-row"><span class="detail-label">Spouse(s)</span><span id="d-spouses"></span></div>
+            <div class="detail-row"><span class="detail-label">Sibling(s)</span><span id="d-siblings"></span></div>
+            <div class="detail-row"><span class="detail-label">Child(ren)</span><span id="d-children"></span></div>
+
+            <div class="section-heading">Biography & Obituary</div>
+            <div class="detail-row" id="d-bio" style="font-style: italic; line-height: 1.5;"></div>
+
+            <div style="margin-top: 30px; border-top: 1px solid var(--border-color); padding-top: 15px;">
+                <button class="action-btn" onclick="enableEditMode()">Edit Record</button>
+            </div>
+        </div>
+
+        <!-- Edit Form inside Drawer -->
+        <div id="drawer-edit-mode" style="display: none;">
+            <h2 class="drawer-title">Edit Ancestor</h2>
+            <input type="hidden" id="edit-id">
+            
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="edit-name">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Date of Birth</label>
+                    <input type="text" id="edit-dob">
+                </div>
+                <div class="form-group">
+                    <label>Place of Birth</label>
+                    <input type="text" id="edit-pob">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Date of Death</label>
+                    <input type="text" id="edit-dod">
+                </div>
+                <div class="form-group">
+                    <label>Place of Death</label>
+                    <input type="text" id="edit-pod">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Cemetery</label>
+                    <input type="text" id="edit-cemetery">
+                </div>
+                <div class="form-group">
+                    <label>Cemetery Location</label>
+                    <input type="text" id="edit-cemetery-location">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Father</label>
+                    <select id="edit-father" onchange="handleDropdownSelection(this, 'edit', 'father')">
+                        <option value="">-- None / Unknown --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Mother</label>
+                    <select id="edit-mother" onchange="handleDropdownSelection(this, 'edit', 'mother')">
+                        <option value="">-- None / Unknown --</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Spouse(s)</label>
+                <div id="edit-spouse-container" class="dynamic-list-container"></div>
+                <button type="button" class="small-btn" onclick="addDynamicRow('edit-spouse-container', 'spouse', '', 'edit')">+ Add Spouse</button>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Sibling(s)</label>
+                    <div id="edit-sibling-container" class="dynamic-list-container"></div>
+                    <button type="button" class="small-btn" onclick="addDynamicRow('edit-sibling-container', 'sibling', '', 'edit')">+ Add Sibling</button>
+                </div>
+                <div class="form-group">
+                    <label>Child(ren)</label>
+                    <div id="edit-child-container" class="dynamic-list-container"></div>
+                    <button type="button" class="small-btn" onclick="addDynamicRow('edit-child-container', 'child', '', 'edit')">+ Add Child</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Biography / Obituary</label>
+                <textarea id="edit-bio" rows="4"></textarea>
+            </div>
+
+            <div style="margin-top: 20px; display: flex; gap: 10px;">
+                <button class="action-btn" onclick="saveEditedRecord()">Save Changes</button>
+                <button class="action-btn" style="background:#ccc; color:#333; border-color:#999;" onclick="cancelEditMode()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let database = {
+            "root": {
+                name: "George Washington Smith",
+                dob: "12 Oct 1872",
+                pob: "Shannon County, MO",
+                dod: "14 May 1945",
+                pod: "Winona, MO",
+                cemetery: "Old Salem Cemetery",
+                cemeteryLocation: "Winona, MO",
+                fatherId: "p1",
+                motherId: "p2_dummy",
+                spouseIds: [],
+                siblingIds: [],
+                childIds: [],
+                bio: "Worked as a timberman and local farmer throughout his life in the Ozarks."
+            },
+            "p1": {
+                name: "John Henry Smith",
+                dob: "12 Mar 1845",
+                pob: "Tennessee",
+                dod: "14 Aug 1910",
+                pod: "Winona, MO",
+                cemetery: "Old Salem Cemetery",
+                cemeteryLocation: "Winona, MO",
+                fatherId: "gp1",
+                motherId: "",
+                spouseIds: ["p2_dummy"],
+                siblingIds: [],
+                childIds: ["root"],
+                bio: "Pioneer settler who moved to Missouri following the Civil War."
+            },
+            "p2_dummy": {
+                name: "Mary Elizabeth Davis",
+                dob: "15 Apr 1848",
+                pob: "Kentucky",
+                dod: "20 Jan 1922",
+                pod: "Winona, MO",
+                cemetery: "Old Salem Cemetery",
+                cemeteryLocation: "Winona, MO",
+                fatherId: "gp2",
+                motherId: "",
+                spouseIds: ["p1"],
+                siblingIds: [],
+                childIds: ["root"],
+                bio: "Early resident of Shannon County."
+            }
+        };
+
+        let currentOpenId = null;
+        let fileSha = null;
+
+        // Load saved GitHub credentials from browser storage on startup
+        window.addEventListener('DOMContentLoaded', () => {
+            if(localStorage.getItem('gh_owner')) document.getElementById('gh-owner').value = localStorage.getItem('gh_owner');
+            if(localStorage.getItem('gh_repo')) document.getElementById('gh-repo').value = localStorage.getItem('gh_repo');
+            if(localStorage.getItem('gh_token')) document.getElementById('gh-token').value = localStorage.getItem('gh_token');
+            
+            if(document.getElementById('gh-owner').value && document.getElementById('gh-repo').value) {
+                loadFromGitHub();
+            } else {
+                renderTree();
+            }
+        });
+
+        async function saveToGitHub() {
+            let owner = document.getElementById('gh-owner').value.trim();
+            let repo = document.getElementById('gh-repo').value.trim();
+            let token = document.getElementById('gh-token').value.trim();
+
+            if(!owner || !repo || !token) {
+                alert('Please enter GitHub Owner, Repo name, and Token to sync.');
+                return;
+            }
+
+            // Save credentials locally on this device
+            localStorage.setItem('gh_owner', owner);
+            localStorage.setItem('gh_repo', repo);
+            localStorage.setItem('gh_token', token);
+
+            let statusEl = document.getElementById('sync-status');
+            statusEl.innerText = "Status: Saving to GitHub...";
+
+            try {
+                // First get latest SHA if not present
+                if(!fileSha) {
+                    let getRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/family-data.json`, {
+                        headers: { 'Authorization': `token ${token}` }
+                    });
+                    if(getRes.ok) {
+                        let json = await getRes.json();
+                        fileSha = json.sha;
+                    }
+                }
+
+                let contentEncoded = btoa(unescape(encodeURIComponent(JSON.stringify(database, null, 4))));
+                let putRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/family-data.json`, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `token ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: "Update family tree archive from web app",
+                        content: contentEncoded,
+                        sha: fileSha
+                    })
+                });
+
+                if(putRes.ok) {
+                    let resJson = await putRes.json();
+                    fileSha = resJson.content.sha;
+                    statusEl.innerText = "Status: Synced ✓";
+                } else {
+                    let err = await putRes.json();
+                    statusEl.innerText = "Status: Sync failed";
+                    alert('GitHub Sync Error: ' + err.message);
+                }
+            } catch(e) {
+                statusEl.innerText = "Status: Network Error";
+                console.error(e);
+            }
+        }
+
+        async function loadFromGitHub() {
+            let owner = document.getElementById('gh-owner').value.trim();
+            let repo = document.getElementById('gh-repo').value.trim();
+            let token = document.getElementById('gh-token').value.trim();
+
+            if(!owner || !repo) return;
+
+            localStorage.setItem('gh_owner', owner);
+            localStorage.setItem('gh_repo', repo);
+            if(token) localStorage.setItem('gh_token', token);
+
+            let statusEl = document.getElementById('sync-status');
+            statusEl.innerText = "Status: Pulling from GitHub...";
+
+            try {
+                let headers = {};
+                if(token) headers['Authorization'] = `token ${token}`;
+
+                let res = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/family-data.json`, { headers });
+                if(res.ok) {
+                    let json = await res.json();
+                    fileSha = json.sha;
+                    let decoded = decodeURIComponent(escape(atob(json.content)));
+                    database = JSON.parse(decoded);
+                    statusEl.innerText = "Status: Up to date ✓";
+                    renderTree();
+                } else {
+                    statusEl.innerText = "Status: Pull failed (using local)";
+                    renderTree();
+                }
+            } catch(e) {
+                statusEl.innerText = "Status: Offline mode";
+                renderTree();
+            }
+        }
+
+        function getDropdownOptions(excludeId = '') {
+            let sortedIds = Object.keys(database).sort((a, b) => database[a].name.localeCompare(database[b].name));
+            let optionsHTML = '<option value="">-- None / Unknown --</option>';
+            for (let id of sortedIds) {
+                if (id === excludeId) continue;
+                let p = database[id];
+                optionsHTML += `<option value="${id}">${p.name} (${extractYear(p.dob)})</option>`;
+            }
+            optionsHTML += '<option value="__ADD_NEW__" style="font-weight:bold; color:var(--accent);">+ Add New Person...</option>';
+            return optionsHTML;
+        }
+
+        function handleDropdownSelection(selectElement, prefix, fieldType) {
+            if (selectElement.value === "__ADD_NEW__") {
+                let fullName = prompt("Enter full name for the new ancestor:");
+                if (!fullName || !fullName.trim()) {
+                    selectElement.value = "";
+                    return;
+                }
+                fullName = fullName.trim();
+                let newId = fullName.toLowerCase().replace(/[^a-z0-9]/g, '_') + '_' + Math.floor(Math.random() * 900 + 100);
+                
+                database[newId] = {
+                    name: fullName,
+                    dob: "", pob: "", dod: "", pod: "",
+                    cemetery: "", cemeteryLocation: "",
+                    fatherId: "", motherId: "",
+                    spouseIds: [], siblingIds: [], childIds: [],
+                    bio: ""
+                };
+
+                refreshAllDropdowns(prefix);
+                selectElement.value = newId;
+            }
+        }
+
+        function refreshAllDropdowns(prefix) {
+            let excludeId = (prefix === 'edit') ? document.getElementById('edit-id').value : '';
+            
+            let fSelect = document.getElementById(prefix + '-father');
+            let mSelect = document.getElementById(prefix + '-mother');
+            let fVal = fSelect.value;
+            let mVal = mSelect.value;
+
+            let opts = getDropdownOptions(excludeId);
+            fSelect.innerHTML = opts;
+            mSelect.innerHTML = opts;
+            fSelect.value = fVal;
+            mSelect.value = mVal;
+
+            ['spouse', 'sibling', 'child'].forEach(type => {
+                let container = document.getElementById(prefix + '-' + type + '-container');
+                if(!container) return;
+                let rows = container.querySelectorAll('.dynamic-row-item');
+                rows.forEach(row => {
+                    let sel = row.querySelector('select');
+                    let curVal = sel.value;
+                    sel.innerHTML = getDropdownOptions(excludeId);
+                    sel.value = curVal;
+                });
+            });
+        }
+
+        function addDynamicRow(containerId, selectType, selectedVal = '', prefix = 'new') {
+            let container = document.getElementById(containerId);
+            let rowId = 'dyn_row_' + Math.random().toString(36).substr(2, 9);
+            let excludeId = (prefix === 'edit') ? document.getElementById('edit-id').value : '';
+            
+            let div = document.createElement('div');
+            div.className = 'dynamic-row-item';
+            div.id = rowId;
+            div.innerHTML = `
+                <select class="dyn-select-${selectType}" onchange="handleDropdownSelection(this, '${prefix}', '${selectType}')">
+                    ${getDropdownOptions(excludeId)}
+                </select>
+                <button type="button" class="small-btn" style="background:#e8d3c0;" onclick="document.getElementById('${rowId}').remove()">&times;</button>
+            `;
+            container.appendChild(div);
+            
+            if (selectedVal) {
+                div.querySelector('select').value = selectedVal;
+            }
+        }
+
+        function populateFormFields(prefix, excludeId = '', data = null) {
+            let opts = getDropdownOptions(excludeId);
+
+            document.getElementById(prefix + '-father').innerHTML = opts;
+            document.getElementById(prefix + '-mother').innerHTML = opts;
+
+            document.getElementById(prefix + '-father').value = data ? (data.fatherId || '') : '';
+            document.getElementById(prefix + '-mother').value = data ? (data.motherId || '') : '';
+
+            document.getElementById(prefix + '-spouse-container').innerHTML = '';
+            document.getElementById(prefix + '-sibling-container').innerHTML = '';
+            document.getElementById(prefix + '-child-container').innerHTML = '';
+
+            let spouses = data ? (data.spouseIds || []) : [];
+            let siblings = data ? (data.siblingIds || []) : [];
+            let children = data ? (data.childIds || []) : [];
+
+            spouses.forEach(sId => addDynamicRow(prefix + '-spouse-container', 'spouse', sId, prefix));
+            siblings.forEach(sId => addDynamicRow(prefix + '-sibling-container', 'sibling', sId, prefix));
+            children.forEach(cId => addDynamicRow(prefix + '-child-container', 'child', cId, prefix));
+        }
+
+        function getDynamicValues(containerId, className) {
+            let container = document.getElementById(containerId);
+            let selects = container.querySelectorAll('.' + className);
+            let values = [];
+            selects.forEach(sel => {
+                if(sel.value && sel.value !== '__ADD_NEW__' && !values.includes(sel.value)) {
+                    values.push(sel.value);
+                }
+            });
+            return values;
+        }
+
+        function extractYear(dateStr) {
+            if (!dateStr) return '????';
+            let match = dateStr.match(/\b\d{4}\b/);
+            return match ? match[0] : dateStr;
+        }
+
+        function switchView(viewName, btn) {
+            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
+            
+            document.getElementById('view-' + viewName).classList.add('active');
+            if(btn) btn.classList.add('active');
+
+            if(viewName === 'tree') renderTree();
+            if(viewName === 'directory') renderDirectory(database);
+            if(viewName === 'add') populateFormFields('new');
+        }
+
+        function calculateGenerations() {
+            let genMap = {};
+            let roots = Object.keys(database).filter(id => id === 'root' || database[id].name.includes("George Washington Smith"));
+            if(roots.length === 0 && Object.keys(database).length > 0) {
+                roots = [Object.keys(database)[0]];
+            }
+
+            roots.forEach(rId => genMap[rId] = 0);
+
+            let changed = true;
+            let loops = 0;
+            while(changed && loops < 15) {
+                changed = false;
+                loops++;
+                for(let id in database) {
+                    let p = database[id];
+                    if(genMap[id] !== undefined) {
+                        let curGen = genMap[id];
+                        if(p.fatherId && genMap[p.fatherId] === undefined) { genMap[p.fatherId] = curGen - 1; changed = true; }
+                        if(p.motherId && genMap[p.motherId] === undefined) { genMap[p.motherId] = curGen - 1; changed = true; }
+                        if(p.childIds) {
+                            p.childIds.forEach(cId => {
+                                if(genMap[cId] === undefined) { genMap[cId] = curGen + 1; changed = true; }
+                            });
+                        }
+                        if(p.spouseIds) {
+                            p.spouseIds.forEach(sId => {
+                                if(genMap[sId] === undefined) { genMap[sId] = curGen; changed = true; }
+                            });
+                        }
+                        if(p.siblingIds) {
+                            p.siblingIds.forEach(sId => {
+                                if(genMap[sId] === undefined) { genMap[sId] = curGen; changed = true; }
+                            });
+                        }
+                    }
+                }
+            }
+
+            for(let id in database) {
+                let p = database[id];
+                if(genMap[id] === undefined) {
+                    if(p.childIds) {
+                        for(let cId of p.childIds) {
+                            if(genMap[cId] !== undefined) { genMap[id] = genMap[cId] - 1; break; }
+                        }
+                    }
+                    if(genMap[id] === undefined && p.spouseIds) {
+                        for(let sId of p.spouseIds) {
+                            if(genMap[sId] !== undefined) { genMap[id] = genMap[sId]; break; }
+                        }
+                    }
+                }
+            }
+
+            for(let id in database) {
+                if(genMap[id] === undefined) genMap[id] = 0;
+            }
+            return genMap;
+        }
+
+        function renderTree() {
+            let genMap = calculateGenerations();
+            let tiers = {};
+
+            for(let id in database) {
+                let g = genMap[id];
+                if(!tiers[g]) tiers[g] = [];
+                tiers[g].push(id);
+            }
+
+            let sortedGens = Object.keys(tiers).map(Number).sort((a, b) => a - b);
+            let containerHTML = '';
+
+            sortedGens.forEach(g => {
+                let tierIds = [...tiers[g]];
+                let processed = new Set();
+                let tierCardsHTML = '';
+
+                tierIds.forEach(id => {
+                    if(processed.has(id)) return;
+
+                    let p = database[id];
+                    let coupleHtml = '';
+
+                    let activeSpouses = (p.spouseIds || []).filter(sId => tierIds.includes(sId) && !processed.has(sId));
+                    tierIds.forEach(sId => {
+                        if(!processed.has(sId) && sId !== id) {
+                            let spObj = database[sId];
+                            if(spObj && spObj.spouseIds && spObj.spouseIds.includes(id)) {
+                                if(!activeSpouses.includes(sId)) activeSpouses.push(sId);
+                            }
+                        }
+                    });
+
+                    if(activeSpouses.length > 0) {
+                        coupleHtml += renderPersonCard(id);
+                        processed.add(id);
+
+                        activeSpouses.forEach(sId => {
+                            coupleHtml += renderPersonCard(sId);
+                            processed.add(sId);
+                        });
+
+                        tierCardsHTML += `<div class="couple-group">${coupleHtml}</div>`;
+                    } else {
+                        tierCardsHTML += renderPersonCard(id);
+                        processed.add(id);
+                    }
+                });
+
+                containerHTML += `
+                    <div class="generation-tier-row">
+                        ${tierCardsHTML}
+                    </div>
+                `;
+            });
+
+            document.getElementById('treeContainer').innerHTML = containerHTML || '<p style="font-style:italic;">No family members recorded.</p>';
+        }
+
+        function renderPersonCard(id) {
+            let p = database[id];
+            let bYear = extractYear(p.dob);
+            let dYear = extractYear(p.dod);
+            
+            let allSpouses = new Set([...(p.spouseIds || [])]);
+            for(let otherId in database) {
+                let other = database[otherId];
+                if(other.spouseIds && other.spouseIds.includes(id)) {
+                    allSpouses.add(otherId);
+                }
+            }
+            let spouseNames = Array.from(allSpouses).map(sId => database[sId] ? database[sId].name : '').filter(Boolean).join(', ');
+
+            let allChildren = new Set([...(p.childIds || [])]);
+            for(let otherId in database) {
+                let other = database[otherId];
+                if(other.fatherId === id || other.motherId === id) {
+                    allChildren.add(otherId);
+                }
+            }
+
+            return `
+                <div class="person-card" onclick="openDrawer('${id}')">
+                    <div class="person-name">${p.name}</div>
+                    <div class="person-dates">${bYear} – ${dYear}</div>
+                    <div class="card-relation-summary">
+                        ${spouseNames ? `<strong>Spouse:</strong> ${spouseNames}<br>` : ''}
+                        <strong>Children:</strong> ${allChildren.size} recorded
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderDirectory(data) {
+            let html = '';
+            for (let id in data) {
+                let p = data[id];
+                html += `
+                    <div class="person-card" onclick="openDrawer('${id}')" style="width:100%;">
+                        <div class="person-name">${p.name}</div>
+                        <div class="person-dates"><strong>Birth:</strong> ${p.dob || 'Unknown'} (${p.pob || 'Unknown'})</div>
+                        <div class="person-dates"><strong>Death:</strong> ${p.dod || 'Unknown'} (${p.pod || 'Unknown'})</div>
+                    </div>
+                `;
+            }
+            document.getElementById('directoryGrid').innerHTML = html;
+        }
+
+        function handleSearch() {
+            let query = document.getElementById('searchInput').value.toLowerCase();
+            let filtered = {};
+            for (let id in database) {
+                let p = database[id];
+                let combined = `${p.name} ${p.dob} ${p.pob} ${p.dod} ${p.pod} ${p.cemetery} ${p.cemeteryLocation}`.toLowerCase();
+                if(combined.includes(query)) {
+                    filtered[id] = p;
+                }
+            }
+            renderDirectory(filtered);
+            if(query.length > 0) {
+                document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+                document.getElementById('view-directory').classList.add('active');
+            }
+        }
+
+        function addNewPerson() {
+            let id = document.getElementById('new-id').value.trim();
+            if(!id) { alert('Please enter a unique ID key.'); return; }
+            if(database[id]) { alert('An ancestor with this ID key already exists.'); return; }
+
+            let newPerson = {
+                name: document.getElementById('new-name').value,
+                dob: document.getElementById('new-dob').value,
+                pob: document.getElementById('new-pob').value,
+                dod: document.getElementById('new-dod').value,
+                pod: document.getElementById('new-pod').value,
+                cemetery: document.getElementById('new-cemetery').value,
+                cemeteryLocation: document.getElementById('new-cemetery-location').value,
+                fatherId: document.getElementById('new-father').value,
+                motherId: document.getElementById('new-mother').value,
+                spouseIds: getDynamicValues('new-spouse-container', 'dyn-select-spouse'),
+                siblingIds: getDynamicValues('new-sibling-container', 'dyn-select-sibling'),
+                childIds: getDynamicValues('new-child-container', 'dyn-select-child'),
+                bio: document.getElementById('new-bio').value
+            };
+
+            database[id] = newPerson;
+            syncBidirectionalRelationships(id, newPerson);
+            saveToGitHub();
+
+            alert('Ancestor added and synced to GitHub!');
+            switchView('tree', document.querySelectorAll('.nav-btn')[0]);
+        }
+
+        function openDrawer(id) {
+            currentOpenId = id;
+            let person = database[id];
+            if (!person) return;
+
+            cancelEditMode();
+
+            document.getElementById('d-name').innerText = person.name;
+            document.getElementById('d-birth-info').innerText = `${person.dob || 'Unknown Date'} — ${person.pob || 'Unknown Place'}`;
+            document.getElementById('d-death-info').innerText = `${person.dod || 'Unknown Date'} — ${person.pod || 'Unknown Place'}`;
+            
+            let cemText = 'Not recorded';
+            if (person.cemetery || person.cemeteryLocation) {
+                cemText = `${person.cemetery || 'Unknown Cemetery'} (${person.cemeteryLocation || 'Unknown Location'})`;
+            }
+            document.getElementById('d-cemetery-info').innerText = cemText;
+
+            let fatherObj = database[person.fatherId];
+            let motherObj = database[person.motherId];
+
+            document.getElementById('d-father').innerText = fatherObj ? fatherObj.name : 'Not recorded';
+            document.getElementById('d-mother').innerText = motherObj ? motherObj.name : 'Not recorded';
+
+            let allSpouses = new Set([...(person.spouseIds || [])]);
+            for(let otherId in database) {
+                let other = database[otherId];
+                if(other.spouseIds && other.spouseIds.includes(id)) allSpouses.add(otherId);
+            }
+            let spouseNames = Array.from(allSpouses).map(sId => database[sId] ? database[sId].name : sId);
+            document.getElementById('d-spouses').innerText = spouseNames.length > 0 ? spouseNames.join(', ') : 'Not recorded';
+
+            let sibNames = (person.siblingIds || []).map(sId => database[sId] ? database[sId].name : sId);
+            document.getElementById('d-siblings').innerText = sibNames.length > 0 ? sibNames.join(', ') : 'Not recorded';
+
+            let allChildren = new Set([...(person.childIds || [])]);
+            for(let otherId in database) {
+                let other = database[otherId];
+                if(other.fatherId === id || other.motherId === id) {
+                    allChildren.add(otherId);
+                }
+            }
+            let childNames = Array.from(allChildren).map(cId => database[cId] ? database[cId].name : cId);
+            document.getElementById('d-children').innerText = childNames.length > 0 ? childNames.join(', ') : 'Not recorded';
+
+            document.getElementById('d-bio').innerText = person.bio || 'No biographical notes recorded.';
+
+            document.getElementById('drawer').classList.add('open');
+            document.getElementById('overlay').classList.add('active');
+        }
+
+        function enableEditMode() {
+            let person = database[currentOpenId];
+            if(!person) return;
+
+            document.getElementById('edit-id').value = currentOpenId;
+            document.getElementById('edit-name').value = person.name || '';
+            document.getElementById('edit-dob').value = person.dob || '';
+            document.getElementById('edit-pob').value = person.pob || '';
+            document.getElementById('edit-dod').value = person.dod || '';
+            document.getElementById('edit-pod').value = person.pod || '';
+            document.getElementById('edit-cemetery').value = person.cemetery || '';
+            document.getElementById('edit-cemetery-location').value = person.cemeteryLocation || '';
+
+            let fullData = {...person};
+            let derivedChildren = new Set([...(fullData.childIds || [])]);
+            for(let otherId in database) {
+                if(database[otherId].fatherId === currentOpenId || database[otherId].motherId === currentOpenId) {
+                    derivedChildren.add(otherId);
+                }
+            }
+            fullData.childIds = Array.from(derivedChildren);
+
+            populateFormFields('edit', currentOpenId, fullData);
+            document.getElementById('edit-bio').value = person.bio || '';
+
+            document.getElementById('drawer-view-mode').style.display = 'none';
+            document.getElementById('drawer-edit-mode').style.display = 'block';
+        }
+
+        function cancelEditMode() {
+            document.getElementById('drawer-view-mode').style.display = 'block';
+            document.getElementById('drawer-edit-mode').style.display = 'none';
+        }
+
+        function syncBidirectionalRelationships(personId, personData) {
+            if (personData.spouseIds) {
+                personData.spouseIds.forEach(sId => {
+                    if (database[sId]) {
+                        if (!database[sId].spouseIds) database[sId].spouseIds = [];
+                        if (!database[sId].spouseIds.includes(personId)) {
+                            database[sId].spouseIds.push(personId);
+                        }
+                    }
+                });
+            }
+            if (personData.fatherId && database[personData.fatherId]) {
+                let f = database[personData.fatherId];
+                if (!f.childIds) f.childIds = [];
+                if (!f.childIds.includes(personId)) f.childIds.push(personId);
+            }
+            if (personData.motherId && database[personData.motherId]) {
+                let m = database[personData.motherId];
+                if (!m.childIds) m.childIds = [];
+                if (!m.childIds.includes(personId)) m.childIds.push(personId);
+            }
+        }
+
+        function saveEditedRecord() {
+            let id = document.getElementById('edit-id').value;
+            let updatedData = {
+                name: document.getElementById('edit-name').value,
+                dob: document.getElementById('edit-dob').value,
+                pob: document.getElementById('edit-pob').value,
+                dod: document.getElementById('edit-dod').value,
+                pod: document.getElementById('edit-pod').value,
+                cemetery: document.getElementById('edit-cemetery').value,
+                cemeteryLocation: document.getElementById('edit-cemetery-location').value,
+                fatherId: document.getElementById('edit-father').value,
+                motherId: document.getElementById('edit-mother').value,
+                spouseIds: getDynamicValues('edit-spouse-container', 'dyn-select-spouse'),
+                siblingIds: getDynamicValues('edit-sibling-container', 'dyn-select-sibling'),
+                childIds: getDynamicValues('edit-child-container', 'dyn-select-child'),
+                bio: document.getElementById('edit-bio').value
+            };
+
+            database[id] = updatedData;
+            syncBidirectionalRelationships(id, updatedData);
+            saveToGitHub();
+
+            alert('Record updated and synced to GitHub!');
+            openDrawer(id);
+            renderTree();
+        }
+
+        function closeDrawer() {
+            document.getElementById('drawer').classList.remove('open');
+            document.getElementById('overlay').classList.remove('active');
+        }
+    </script>
+</body>
+</html>
