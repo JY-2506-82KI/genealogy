@@ -15,18 +15,16 @@
         "bio": "Worked as a timberman and local farmer throughout his life in the Ozarks."
     },
     "p1": {
-        "name": "John Henry Smith",
-        "dob": "12 Mar 1845",
-        "pob": "Tennessee",
-        "dod": "14 Aug 1910",
-        "pod": "Winona, MO",
-        "cemetery": "Old Salem Cemetery",
-        "cemeteryLocation": "Winona, MO",
-        "fatherId": "gp1",
+        "name": "Teddy Ray Yates",
+        "dob": "3/8/1963",
+        "pob": "Missouri",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
         "motherId": "",
-        "spouseIds": [
-            "p2_dummy"
-        ],
+        "spouseIds": [],
         "siblingIds": [],
         "childIds": [
             "root"
