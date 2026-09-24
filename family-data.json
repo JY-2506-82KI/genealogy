@@ -22,7 +22,7 @@
         "pod": "",
         "cemetery": "",
         "cemeteryLocation": "",
-        "fatherId": "",
+        "fatherId": "marvin_howard_yates_228",
         "motherId": "",
         "spouseIds": [
             "p2_dummy"
@@ -51,5 +51,22 @@
             "root"
         ],
         "bio": "Early resident of Shannon County."
+    },
+    "marvin_howard_yates_228": {
+        "name": "Marvin Howard Yates",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "p1"
+        ],
+        "bio": ""
     }
 }
