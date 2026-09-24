@@ -41,8 +41,8 @@
         "pod": "",
         "cemetery": "",
         "cemeteryLocation": "",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "ronald_dean_brawley_401",
+        "motherId": "judy_alice_blunk_758",
         "spouseIds": [
             "p1"
         ],
@@ -83,6 +83,40 @@
         "siblingIds": [],
         "childIds": [
             "p1"
+        ],
+        "bio": ""
+    },
+    "ronald_dean_brawley_401": {
+        "name": "Ronald Dean Brawley",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "p2_dummy"
+        ],
+        "bio": ""
+    },
+    "judy_alice_blunk_758": {
+        "name": "Judy Alice Blunk",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "p2_dummy"
         ],
         "bio": ""
     }
