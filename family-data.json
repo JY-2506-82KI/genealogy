@@ -1,12 +1,12 @@
 {
     "root": {
-        "name": "George Washington Smith",
-        "dob": "12 Oct 1872",
-        "pob": "Shannon County, MO",
-        "dod": "14 May 1945",
-        "pod": "Winona, MO",
-        "cemetery": "Old Salem Cemetery",
-        "cemeteryLocation": "Winona, MO",
+        "name": "Jason Lee Yates",
+        "dob": "11/23/1987",
+        "pob": "West Plains, Mo",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
         "fatherId": "p1",
         "motherId": "p2_dummy",
         "spouseIds": [],
@@ -24,9 +24,13 @@
         "cemeteryLocation": "Winona, MO",
         "fatherId": "gp1",
         "motherId": "",
-        "spouseIds": ["p2_dummy"],
+        "spouseIds": [
+            "p2_dummy"
+        ],
         "siblingIds": [],
-        "childIds": ["root"],
+        "childIds": [
+            "root"
+        ],
         "bio": "Pioneer settler who moved to Missouri following the Civil War."
     },
     "p2_dummy": {
@@ -39,9 +43,13 @@
         "cemeteryLocation": "Winona, MO",
         "fatherId": "gp2",
         "motherId": "",
-        "spouseIds": ["p1"],
+        "spouseIds": [
+            "p1"
+        ],
         "siblingIds": [],
-        "childIds": ["root"],
+        "childIds": [
+            "root"
+        ],
         "bio": "Early resident of Shannon County."
     }
 }
