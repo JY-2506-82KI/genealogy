@@ -96,7 +96,9 @@
         "cemeteryLocation": "",
         "fatherId": "",
         "motherId": "",
-        "spouseIds": [],
+        "spouseIds": [
+            "judy_alice_blunk_758"
+        ],
         "siblingIds": [],
         "childIds": [
             "p2_dummy"
@@ -113,7 +115,9 @@
         "cemeteryLocation": "",
         "fatherId": "",
         "motherId": "",
-        "spouseIds": [],
+        "spouseIds": [
+            "ronald_dean_brawley_401"
+        ],
         "siblingIds": [],
         "childIds": [
             "p2_dummy"
