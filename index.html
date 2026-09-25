@@ -441,7 +441,6 @@
             
             <div class="section-heading">Birth & Death</div>
             <div class="detail-row"><span class="detail-label">Birth</span><span id="d-birth-info"></span></div>
-            <div class="detail-row"><span class="detail-label">Birth</span><span id="d-birth-info"></span></div>
             <div class="detail-row"><span class="detail-label">Death</span><span id="d-death-info"></span></div>
             <div class="detail-row"><span class="detail-label">Cemetery</span><span id="d-cemetery-info"></span></div>
 
@@ -1024,39 +1023,40 @@ function toggleCollaterals() {
         btn.innerText = `▶ Show Collateral Relatives / Siblings (${container.querySelectorAll('.person-card').length})`;
     }
 }
-        function renderPersonCard(id) {
-            let p = database[id];
-            let bYear = extractYear(p.dob);
-            let dYear = extractYear(p.dod);
-            
-            let allSpouses = new Set([...(p.spouseIds || [])]);
-            for(let otherId in database) {
-                let other = database[otherId];
-                if(other.spouseIds && other.spouseIds.includes(id)) {
-                    allSpouses.add(otherId);
-                }
-            }
-            let spouseNames = Array.from(allSpouses).map(sId => database[sId] ? database[sId].name : '').filter(Boolean).join(', ');
-
-            let allChildren = new Set([...(p.childIds || [])]);
-            for(let otherId in database) {
-                let other = database[otherId];
-                if(other.fatherId === id || other.motherId === id) {
-                    allChildren.add(otherId);
-                }
-            }
-
-            return `
-                <div class="person-card" onclick="openDrawer('${id}')">
-                    <div class="person-name">${p.name}</div>
-                    <div class="person-dates">${bYear} – ${dYear}</div>
-                    <div class="card-relation-summary">
-                        ${spouseNames ? `<strong>Spouse:</strong> ${spouseNames}<br>` : ''}
-                        <strong>Children:</strong> ${allChildren.size} recorded
-                    </div>
-                </div>
-            `;
+function renderPersonCard(id) {
+    let p = database[id];
+    if(!p) return '';
+    let bYear = extractYear(p.dob);
+    let dYear = extractYear(p.dod);
+    
+    let allSpouses = new Set([...(p.spouseIds || [])]);
+    for(let otherId in database) {
+        let other = database[otherId];
+        if(other.spouseIds && other.spouseIds.includes(id)) {
+            allSpouses.add(otherId);
         }
+    }
+    let spouseNames = Array.from(allSpouses).map(sId => database[sId] ? database[sId].name : '').filter(Boolean).join(', ');
+
+    let allChildren = new Set([...(p.childIds || [])]);
+    for(let otherId in database) {
+        let other = database[otherId];
+        if(other.fatherId === id || other.motherId === id) {
+            allChildren.add(otherId);
+        }
+    }
+
+    return `
+        <div class="person-card" onclick="openDrawer('${id}')">
+            <div class="person-name">${p.name}</div>
+            <div class="person-dates">${bYear} – ${dYear}</div>
+            <div class="card-relation-summary">
+                ${spouseNames ? `<strong>Spouse:</strong> ${spouseNames}<br>` : ''}
+                <strong>Children:</strong> ${allChildren.size} recorded
+            </div>
+        </div>
+    `;
+}
 
         function renderDirectory(data) {
             let html = '';
@@ -1289,6 +1289,27 @@ function toggleCollaterals() {
     renderTree();
     console.log(`Pedigree root shifted to ${database[id].name}`);
 }        
+
+    function syncAllSiblings() {
+    // Loop through every person in the database
+    for (let personId in database) {
+        let person = database[personId];
+        if (person.siblingIds && Array.isArray(person.siblingIds)) {
+            person.siblingIds.forEach(siblingId => {
+                // Check if the sibling exists in the database
+                if (database[siblingId]) {
+                    if (!database[siblingId].siblingIds) {
+                        database[siblingId].siblingIds = [];
+                    }
+                    // If the sibling doesn't have this person listed, add them back reciprocally
+                    if (!database[siblingId].siblingIds.includes(personId)) {
+                        database[siblingId].siblingIds.push(personId);
+                    }
+                }
+            });
+        }
+    }
+}
     </script>
 </body>
 </html>
