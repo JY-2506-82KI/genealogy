@@ -535,62 +535,58 @@
         </div>
     </div>
 
-    <script>
+<script>
     console.log("Test check");
     let currentRootId = localStorage.getItem('family_tree_root') || 'root';
     let currentOpenPersonId = null;
 
     let database = {
         "root": {
-
-        
-        let database = {
-            "root": {
-                name: "George Washington Smith",
-                dob: "12 Oct 1872",
-                pob: "Shannon County, MO",
-                dod: "14 May 1945",
-                pod: "Winona, MO",
-                cemetery: "Old Salem Cemetery",
-                cemeteryLocation: "Winona, MO",
-                fatherId: "p1",
-                motherId: "p2_dummy",
-                spouseIds: [],
-                siblingIds: [],
-                childIds: [],
-                bio: "Worked as a timberman and local farmer throughout his life in the Ozarks."
-            },
-            "p1": {
-                name: "John Henry Smith",
-                dob: "12 Mar 1845",
-                pob: "Tennessee",
-                dod: "14 Aug 1910",
-                pod: "Winona, MO",
-                cemetery: "Old Salem Cemetery",
-                cemeteryLocation: "Winona, MO",
-                fatherId: "gp1",
-                motherId: "",
-                spouseIds: ["p2_dummy"],
-                siblingIds: [],
-                childIds: ["root"],
-                bio: "Pioneer settler who moved to Missouri following the Civil War."
-            },
-            "p2_dummy": {
-                name: "Mary Elizabeth Davis",
-                dob: "15 Apr 1848",
-                pob: "Kentucky",
-                dod: "20 Jan 1922",
-                pod: "Winona, MO",
-                cemetery: "Old Salem Cemetery",
-                cemeteryLocation: "Winona, MO",
-                fatherId: "gp2",
-                motherId: "",
-                spouseIds: ["p1"],
-                siblingIds: [],
-                childIds: ["root"],
-                bio: "Early resident of Shannon County."
-            }
-        };
+            name: "George Washington Smith",
+            dob: "12 Oct 1872",
+            pob: "Shannon County, MO",
+            dod: "14 May 1945",
+            pod: "Winona, MO",
+            cemetery: "Old Salem Cemetery",
+            cemeteryLocation: "Winona, MO",
+            fatherId: "p1",
+            motherId: "p2_dummy",
+            spouseIds: [],
+            siblingIds: [],
+            childIds: [],
+            bio: "Worked as a timberman and local farmer throughout his life in the Ozarks."
+        },
+        "p1": {
+            name: "John Henry Smith",
+            dob: "12 Mar 1845",
+            pob: "Tennessee",
+            dod: "14 Aug 1910",
+            pod: "Winona, MO",
+            cemetery: "Old Salem Cemetery",
+            cemeteryLocation: "Winona, MO",
+            fatherId: "gp1",
+            motherId: "",
+            spouseIds: ["p2_dummy"],
+            siblingIds: [],
+            childIds: ["root"],
+            bio: "Pioneer settler who moved to Missouri following the Civil War."
+        },
+        "p2_dummy": {
+            name: "Mary Elizabeth Davis",
+            dob: "15 Apr 1848",
+            pob: "Kentucky",
+            dod: "20 Jan 1922",
+            pod: "Winona, MO",
+            cemetery: "Old Salem Cemetery",
+            cemeteryLocation: "Winona, MO",
+            fatherId: "gp2",
+            motherId: "",
+            spouseIds: ["p1"],
+            siblingIds: [],
+            childIds: ["root"],
+            bio: "Early resident of Shannon County."
+        }
+    };
 
         let currentOpenId = null;
         let fileSha = null;
