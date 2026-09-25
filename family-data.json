@@ -170,12 +170,12 @@
     },
     "dolly_e_clemons_265": {
         "name": "Dolly E Clemons",
-        "dob": "",
-        "pob": "",
-        "dod": "",
-        "pod": "",
-        "cemetery": "",
-        "cemeteryLocation": "",
+        "dob": "9/3/1911",
+        "pob": "Winona, MO",
+        "dod": "11/24/2002",
+        "pod": "Birch Tree, MO",
+        "cemetery": "Oak Grove Cemetery",
+        "cemeteryLocation": "Birch Tree, MO",
         "fatherId": "",
         "motherId": "",
         "spouseIds": [
