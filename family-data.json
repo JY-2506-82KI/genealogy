@@ -54,12 +54,12 @@
     },
     "marvin_howard_yates_228": {
         "name": "Marvin Howard Yates",
-        "dob": "",
-        "pob": "",
-        "dod": "",
-        "pod": "",
-        "cemetery": "",
-        "cemeteryLocation": "",
+        "dob": "5/20/1937",
+        "pob": "Low Wassie, MO",
+        "dod": "9/19/2009",
+        "pod": "Birch Tree, MO",
+        "cemetery": "Oak Grove Cemetery",
+        "cemeteryLocation": "Birch Tree, MO",
         "fatherId": "",
         "motherId": "",
         "spouseIds": [
@@ -67,7 +67,8 @@
         ],
         "siblingIds": [],
         "childIds": [
-            "p1"
+            "p1",
+            "frances_helen_yates_990"
         ],
         "bio": ""
     },
@@ -126,6 +127,21 @@
         "childIds": [
             "p2_dummy"
         ],
+        "bio": ""
+    },
+    "frances_helen_yates_990": {
+        "name": "Frances Helen Yates",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
         "bio": ""
     }
 }
