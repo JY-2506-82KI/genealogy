@@ -927,28 +927,26 @@ function renderTree() {
         currentRootId = Object.keys(database)[0] || 'root';
     }
     
-    // Dynamically crawl ancestor generations
+    // Build strict positional generation slots (Binary Pedigree Mapping)
+    let maxDepth = 3; // 0: Anchor, 1: Parents, 2: Grandparents, 3: Great-Grandparents
     let generations = [];
-    let currentLevelIds = [currentRootId];
-    let maxDepth = 4;
+    let currentLevel = [currentRootId];
+    generations.push([...currentLevel]);
 
     for (let i = 0; i < maxDepth; i++) {
-        if (currentLevelIds.length === 0) break;
-        generations.push(currentLevelIds);
-        
-        let nextLevelIds = [];
-        currentLevelIds.forEach(id => {
-            let p = database[id];
-            if (p) {
-                if (p.fatherId && database[p.fatherId] && !nextLevelIds.includes(p.fatherId)) {
-                    nextLevelIds.push(p.fatherId);
-                }
-                if (p.motherId && database[p.motherId] && !nextLevelIds.includes(p.motherId)) {
-                    nextLevelIds.push(p.motherId);
-                }
+        let nextLevel = [];
+        currentLevel.forEach(id => {
+            if (!id || !database[id]) {
+                nextLevel.push(null);
+                nextLevel.push(null);
+            } else {
+                let p = database[id];
+                nextLevel.push(p.fatherId && database[p.fatherId] ? p.fatherId : null);
+                nextLevel.push(p.motherId && database[p.motherId] ? p.motherId : null);
             }
         });
-        currentLevelIds = nextLevelIds;
+        generations.push(nextLevel);
+        currentLevel = nextLevel;
     }
 
     let html = '';
@@ -962,28 +960,33 @@ function renderTree() {
                 <div style="display: flex; flex-direction: column; justify-content: space-around; height: 100%; gap: 15px;">
         `;
         
-        if (ids.length === 0) {
-            html += `<div class="person-card" style="opacity: 0.4;"><div class="person-name">None Recorded</div></div>`;
-        } else {
-            ids.forEach(id => {
-                if (database[id]) {
-                    if (index === 0) {
-                        let p = database[id];
-                        let bYear = extractYear(p.dob);
-                        let dYear = extractYear(p.dod);
-                        html += `
-                            <div class="person-card" onclick="openDrawer('${id}')" style="border-left-color: var(--gold); background: #fff5ec;">
-                                <div class="person-name">★ ${p.name}</div>
-                                <div class="person-dates">${bYear} – ${dYear}</div>
-                                <div class="card-relation-summary"><strong>Role:</strong> Pedigree Root</div>
-                            </div>
-                        `;
-                    } else {
-                        html += renderPersonCard(id);
-                    }
+        ids.forEach((id, slotIndex) => {
+            if (!id || !database[id]) {
+                // Render a structural placeholder card for missing/unknown ancestors to maintain alignment
+                let placeholderLabel = index === 1 ? (slotIndex % 2 === 0 ? "Unknown Father" : "Unknown Mother") : "Unknown Ancestor";
+                html += `
+                    <div class="person-card" style="opacity: 0.35; border-style: dashed; background: transparent;">
+                        <div class="person-name" style="font-size: 0.85rem; color: #888;">${placeholderLabel}</div>
+                        <div class="person-dates">---- – ----</div>
+                    </div>
+                `;
+            } else {
+                let p = database[id];
+                if (index === 0) {
+                    let bYear = extractYear(p.dob);
+                    let dYear = extractYear(p.dod);
+                    html += `
+                        <div class="person-card" onclick="openDrawer('${id}')" style="border-left-color: var(--gold); background: #fff5ec;">
+                            <div class="person-name">★ ${p.name}</div>
+                            <div class="person-dates">${bYear} – ${dYear}</div>
+                            <div class="card-relation-summary"><strong>Role:</strong> Pedigree Root</div>
+                        </div>
+                    `;
+                } else {
+                    html += renderPersonCard(id);
                 }
-            });
-        }
+            }
+        });
         html += `</div></div>`;
     });
 
