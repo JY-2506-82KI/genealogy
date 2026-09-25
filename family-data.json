@@ -265,15 +265,17 @@
     },
     "claud_elvin_blunk_832": {
         "name": "Claud Elvin Blunk",
-        "dob": "",
-        "pob": "",
-        "dod": "",
-        "pod": "",
-        "cemetery": "",
-        "cemeteryLocation": "",
+        "dob": "2/13/1893",
+        "pob": "Galena, MO",
+        "dod": "3/31/1955",
+        "pod": "Galena, MO",
+        "cemetery": "Galena Cemetery",
+        "cemeteryLocation": "Galena, MO",
         "fatherId": "",
         "motherId": "",
-        "spouseIds": [],
+        "spouseIds": [
+            "lina_evelyn_benton_537"
+        ],
         "siblingIds": [],
         "childIds": [
             "judy_alice_blunk_758"
@@ -290,7 +292,9 @@
         "cemeteryLocation": "",
         "fatherId": "",
         "motherId": "",
-        "spouseIds": [],
+        "spouseIds": [
+            "claud_elvin_blunk_832"
+        ],
         "siblingIds": [],
         "childIds": [
             "judy_alice_blunk_758"
