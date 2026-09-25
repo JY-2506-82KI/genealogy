@@ -164,7 +164,9 @@
         ],
         "siblingIds": [],
         "childIds": [
-            "marvin_howard_yates_228"
+            "marvin_howard_yates_228",
+            "freddy_d_yates_591",
+            "nanette_yates_872"
         ],
         "bio": ""
     },
@@ -299,6 +301,36 @@
         "childIds": [
             "judy_alice_blunk_758"
         ],
+        "bio": ""
+    },
+    "freddy_d_yates_591": {
+        "name": "Freddy D Yates",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "nanette_yates_872": {
+        "name": "Nanette Yates",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
         "bio": ""
     }
 }
