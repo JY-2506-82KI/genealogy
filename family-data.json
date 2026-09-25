@@ -151,15 +151,17 @@
     },
     "marvin_yates_226": {
         "name": "Marvin Yates",
-        "dob": "",
-        "pob": "",
-        "dod": "",
-        "pod": "",
-        "cemetery": "",
-        "cemeteryLocation": "",
+        "dob": "10/21/1914",
+        "pob": "Low Wassie, MO",
+        "dod": "6/27/1996",
+        "pod": "Springfield, MO",
+        "cemetery": "Oak Grove Cemetery",
+        "cemeteryLocation": "Birch Tree, MO",
         "fatherId": "",
         "motherId": "",
-        "spouseIds": [],
+        "spouseIds": [
+            "dolly_e_clemons_265"
+        ],
         "siblingIds": [],
         "childIds": [
             "marvin_howard_yates_228"
@@ -176,7 +178,9 @@
         "cemeteryLocation": "",
         "fatherId": "",
         "motherId": "",
-        "spouseIds": [],
+        "spouseIds": [
+            "marvin_yates_226"
+        ],
         "siblingIds": [],
         "childIds": [
             "marvin_howard_yates_228"
