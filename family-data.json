@@ -208,12 +208,12 @@
     },
     "rachel_helen_yardley_345": {
         "name": "Rachel Helen Yardley",
-        "dob": "",
-        "pob": "",
-        "dod": "",
-        "pod": "",
-        "cemetery": "",
-        "cemeteryLocation": "",
+        "dob": "4/12/1912",
+        "pob": "Wilderness, MO",
+        "dod": "10/18/1977",
+        "pod": "Winona, MO",
+        "cemetery": "Pine Lawn Cemetery",
+        "cemeteryLocation": "Winona, MO",
         "fatherId": "",
         "motherId": "",
         "spouseIds": [
