@@ -915,75 +915,91 @@ function calculateGenerations() {
 }
 
 function renderTree() {
-    let genMap = calculateGenerations();
-    let tiers = {};
+    let containerEl = document.getElementById('treeContainer');
+    if (!database[currentRootId]) {
+        currentRootId = Object.keys(database)[0] || 'root';
+    }
+    
+    let rootPerson = database[currentRootId];
+    let bYear = extractYear(rootPerson.dob);
+    let dYear = extractYear(rootPerson.dod);
 
-    for(let id in database) {
-        let g = genMap[id];
-        if(!tiers[g]) tiers[g] = [];
-        tiers[g].push(id);
+    // Build a clean, focused pedigree view anchored on currentRootId
+    let html = `
+        <div style="text-align:center; margin-bottom: 20px;">
+            <div style="font-family:'Cinzel',serif; font-size:0.8rem; color:var(--gold); letter-spacing:1px; margin-bottom:5px;">CURRENT PEDIGREE ROOT</div>
+        </div>
+        <div class="generation-tier-row">
+            <div class="person-card" onclick="openDrawer('${currentRootId}')" style="border-left-color: var(--gold); background: #fff5ec;">
+                <div class="person-name">★ ${rootPerson.name}</div>
+                <div class="person-dates">${bYear} – ${dYear}</div>
+                <div class="card-relation-summary">
+                    <strong>Role:</strong> Pedigree Anchor
+                </div>
+            </div>
+        </div>
+    `;
+
+    // Direct Parents Tier (Strictly Parents, no stray siblings)
+    let father = database[rootPerson.fatherId];
+    let mother = database[rootPerson.motherId];
+
+    if (father || mother) {
+        html += `<div style="text-align:center; font-family:'Cinzel',serif; font-size:0.75rem; color:var(--accent); margin: 20px 0 10px 0; letter-spacing:1px;">Direct Parents</div>`;
+        html += `<div class="generation-tier-row">`;
+        
+        if (father) {
+            html += renderPersonCard(rootPerson.fatherId);
+        } else {
+            html += `<div class="person-card" style="opacity: 0.6;"><div class="person-name">Unknown Father</div><div class="person-dates">----</div></div>`;
+        }
+
+        if (mother) {
+            html += renderPersonCard(rootPerson.motherId);
+        } else {
+            html += `<div class="person-card" style="opacity: 0.6;"><div class="person-name">Unknown Mother</div><div class="person-dates">----</div></div>`;
+        }
+        html += `</div>`;
     }
 
-    let sortedGens = Object.keys(tiers).map(Number).sort((a, b) => a - b);
-    let containerHTML = '';
-
-    sortedGens.forEach(g => {
-        let tierIds = [...tiers[g]];
-        let processed = new Set();
-        let tierCardsHTML = '';
-
-        tierIds.forEach(id => {
-            if(processed.has(id)) return;
-
-            let p = database[id];
-            let coupleHtml = '';
-            let groupMemberIds = [id];
-
-            // Pull in siblings who share the same parents into this exact same horizontal row
-            tierIds.forEach(otherId => {
-                if(otherId !== id && !processed.has(otherId)) {
-                    let otherP = database[otherId];
-                    if((p.fatherId && p.fatherId === otherP.fatherId) || (p.motherId && p.motherId === otherP.motherId)) {
-                        if(!groupMemberIds.includes(otherId)) groupMemberIds.push(otherId);
-                    }
-                }
-            });
-
-            // Find active spouses on this same tier to cluster them side-by-side
-            let activeSpouses = [];
-            groupMemberIds.forEach(mId => {
-                let member = database[mId];
-                (member.spouseIds || []).forEach(sId => {
-                    if(tierIds.includes(sId) && !processed.has(sId) && !groupMemberIds.includes(sId)) {
-                        if(!activeSpouses.includes(sId)) activeSpouses.push(sId);
-                    }
-                });
-            });
-
-            groupMemberIds.forEach(mId => {
-                coupleHtml += renderPersonCard(mId);
-                processed.add(mId);
-            });
-
-            activeSpouses.forEach(sId => {
-                coupleHtml += renderPersonCard(sId);
-                processed.add(sId);
-            });
-
-            tierCardsHTML += `<div class="couple-group">${coupleHtml}</div>`;
+    // Expandable Collateral / Indirect Relatives (Siblings / Extended)
+    let siblings = rootPerson.siblingIds || [];
+    if (siblings.length > 0) {
+        html += `
+            <div style="margin-top: 30px; text-align: center;">
+                <button class="small-btn" onclick="toggleCollaterals()" id="collateral-toggle-btn">
+                    ▶ Show Collateral Relatives / Siblings (${siblings.length})
+                </button>
+                <div id="collateral-container" style="display: none; margin-top: 15px;">
+                    <div style="font-family:'Cinzel',serif; font-size:0.75rem; color:var(--accent); margin-bottom:10px; letter-spacing:1px;">Collateral Lineage (Siblings)</div>
+                    <div class="generation-tier-row">
+        `;
+        siblings.forEach(sId => {
+            if (database[sId]) {
+                html += renderPersonCard(sId);
+            }
         });
-
-        containerHTML += `
-            <div style="text-align:center; font-family:'Cinzel',serif; font-size:0.75rem; color:var(--accent); margin-top:10px; margin-bottom:-30px; letter-spacing:1px;">Generation Tier ${g}</div>
-            <div class="generation-tier-row">
-                ${tierCardsHTML}
+        html += `
+                    </div>
+                </div>
             </div>
         `;
-    });
+    }
 
-    document.getElementById('treeContainer').innerHTML = containerHTML || '<p style="font-style:italic;">No family members recorded.</p>';
+    containerEl.innerHTML = html;
 }
 
+function toggleCollaterals() {
+    let container = document.getElementById('collateral-container');
+    let btn = document.getElementById('collateral-toggle-btn');
+    if (container.style.display === 'none') {
+        container.style.display = 'block';
+        btn.innerText = '▼ Hide Collateral Relatives / Siblings';
+    } else {
+        container.style.display = 'none';
+        btn.innerText = `▶ Show Collateral Relatives / Siblings (${container.querySelectorAll('.person-card').length})`;
+    }
+}
         function renderPersonCard(id) {
             let p = database[id];
             let bYear = extractYear(p.dob);
