@@ -104,19 +104,30 @@
             display: block;
         }
         /* Tree View */
-        .tree-container {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            align-items: center;
-            padding-bottom: 50px;
+        .tree-wrapper {
+        width: 100%;
+        overflow: auto; /* Enables smooth panning/scrolling on mobile and desktop */
+        padding: 20px 0;
+        border: 1px dashed var(--border-color);
+        background: rgba(250, 245, 238, 0.5);
+        border-radius: 6px;
+        -webkit-overflow-scrolling: touch; /* Momentum scrolling for iOS/phones */
         }
+
+        .tree-container {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        align-items: center;
+        min-width: max-content; /* Prevents cards from squishing; allows horizontal panning */
+        padding: 20px 40px;
+        }
+
         .generation-tier-row {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-            width: 100%;
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        width: 100%;
         }
         .couple-group {
             display: flex;
