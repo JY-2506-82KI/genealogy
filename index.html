@@ -921,6 +921,8 @@ function calculateGenerations() {
 }
 
 function renderTree() {
+    syncAllSiblings(); // <--- Add this line here
+    
     let containerEl = document.getElementById('treeContainer');
     if (!database[currentRootId]) {
         currentRootId = Object.keys(database)[0] || 'root';
