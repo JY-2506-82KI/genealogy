@@ -185,7 +185,8 @@
         ],
         "siblingIds": [],
         "childIds": [
-            "marvin_howard_yates_228"
+            "marvin_howard_yates_228",
+            "freddy_d_yates_591"
         ],
         "bio": ""
     },
@@ -311,8 +312,8 @@
         "pod": "",
         "cemetery": "",
         "cemeteryLocation": "",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "marvin_yates_226",
+        "motherId": "dolly_e_clemons_265",
         "spouseIds": [],
         "siblingIds": [],
         "childIds": [],
