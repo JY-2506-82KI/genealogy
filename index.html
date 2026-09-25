@@ -1191,10 +1191,10 @@ function toggleCollaterals() {
         }
 
         function enableEditMode() {
-            let person = database[currentOpenId];
+            let person = database[currentOpenPersonId];
             if(!person) return;
 
-            document.getElementById('edit-id').value = currentOpenId;
+            document.getElementById('edit-id').value = currentOpenPersonId;
             document.getElementById('edit-name').value = person.name || '';
             document.getElementById('edit-dob').value = person.dob || '';
             document.getElementById('edit-pob').value = person.pob || '';
@@ -1206,19 +1206,18 @@ function toggleCollaterals() {
             let fullData = {...person};
             let derivedChildren = new Set([...(fullData.childIds || [])]);
             for(let otherId in database) {
-                if(database[otherId].fatherId === currentOpenId || database[otherId].motherId === currentOpenId) {
+                if(database[otherId].fatherId === currentOpenPersonId || database[otherId].motherId === currentOpenPersonId) {
                     derivedChildren.add(otherId);
                 }
             }
             fullData.childIds = Array.from(derivedChildren);
 
-            populateFormFields('edit', currentOpenId, fullData);
+            populateFormFields('edit', currentOpenPersonId, fullData);
             document.getElementById('edit-bio').value = person.bio || '';
 
             document.getElementById('drawer-view-mode').style.display = 'none';
             document.getElementById('drawer-edit-mode').style.display = 'block';
         }
-
         function cancelEditMode() {
             document.getElementById('drawer-view-mode').style.display = 'block';
             document.getElementById('drawer-edit-mode').style.display = 'none';
