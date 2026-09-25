@@ -287,7 +287,8 @@
         ],
         "siblingIds": [],
         "childIds": [
-            "judy_alice_blunk_758"
+            "judy_alice_blunk_758",
+            "joyce_ann_blunk_345"
         ],
         "bio": ""
     },
@@ -306,7 +307,8 @@
         ],
         "siblingIds": [],
         "childIds": [
-            "judy_alice_blunk_758"
+            "judy_alice_blunk_758",
+            "joyce_ann_blunk_345"
         ],
         "bio": ""
     },
@@ -354,10 +356,12 @@
         "pod": "",
         "cemetery": "",
         "cemeteryLocation": "",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "claud_elvin_blunk_832",
+        "motherId": "lina_evelyn_benton_537",
         "spouseIds": [],
-        "siblingIds": [],
+        "siblingIds": [
+            "judy_alice_blunk_758"
+        ],
         "childIds": [],
         "bio": ""
     }
