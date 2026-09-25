@@ -62,8 +62,8 @@
         "pod": "Birch Tree, MO",
         "cemetery": "Oak Grove Cemetery",
         "cemeteryLocation": "Birch Tree, MO",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "marvin_yates_226",
+        "motherId": "dolly_e_clemons_265",
         "spouseIds": [
             "dessie_clara_shomaker_844"
         ],
@@ -147,6 +147,40 @@
             "p1"
         ],
         "childIds": [],
+        "bio": ""
+    },
+    "marvin_yates_226": {
+        "name": "Marvin Yates",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "marvin_howard_yates_228"
+        ],
+        "bio": ""
+    },
+    "dolly_e_clemons_265": {
+        "name": "Dolly E Clemons",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "marvin_howard_yates_228"
+        ],
         "bio": ""
     }
 }
