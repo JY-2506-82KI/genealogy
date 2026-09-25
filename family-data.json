@@ -82,8 +82,8 @@
         "pod": "Birch Tree, MO",
         "cemetery": "Oak Grove Cemetery",
         "cemeteryLocation": "Birch Tree, MO",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "theodore__ted__shomaker_670",
+        "motherId": "rachel_helen_yardley_345",
         "spouseIds": [
             "marvin_howard_yates_228"
         ],
@@ -184,6 +184,40 @@
         "siblingIds": [],
         "childIds": [
             "marvin_howard_yates_228"
+        ],
+        "bio": ""
+    },
+    "theodore__ted__shomaker_670": {
+        "name": "Theodore 'Ted' Shomaker",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "dessie_clara_shomaker_844"
+        ],
+        "bio": ""
+    },
+    "rachel_helen_yardley_345": {
+        "name": "Rachel Helen Yardley",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "dessie_clara_shomaker_844"
         ],
         "bio": ""
     }
