@@ -334,7 +334,10 @@
         "fatherId": "marvin_yates_226",
         "motherId": "dolly_e_clemons_265",
         "spouseIds": [],
-        "siblingIds": [],
+        "siblingIds": [
+            "marvin_howard_yates_228",
+            "freddy_d_yates_591"
+        ],
         "childIds": [],
         "bio": ""
     }
