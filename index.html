@@ -118,15 +118,16 @@
         display: flex;
         flex-direction: row;
         gap: 40px;
-        align-items: flex-start;
+        align-items: stretch; /* Ensures all generation columns share the same height bounds */
         min-width: max-content;
         padding: 20px;
         }
         .pedigree-generation-column {
         display: flex;
         flex-direction: column;
-        gap: 20px;
-        justify-content: center;
+        justify-content: space-around; /* Automatically centers cards vertically relative to adjacent columns */
+        min-width: 260px;
+        padding: 10px 0;
         }
 
         .generation-tier-row {
@@ -926,63 +927,84 @@ function renderTree() {
         currentRootId = Object.keys(database)[0] || 'root';
     }
     
+    // Dynamically crawl ancestor generations
+    let generations = [];
+    let currentLevelIds = [currentRootId];
+    let maxDepth = 4;
+
+    for (let i = 0; i < maxDepth; i++) {
+        if (currentLevelIds.length === 0) break;
+        generations.push(currentLevelIds);
+        
+        let nextLevelIds = [];
+        currentLevelIds.forEach(id => {
+            let p = database[id];
+            if (p) {
+                if (p.fatherId && database[p.fatherId] && !nextLevelIds.includes(p.fatherId)) {
+                    nextLevelIds.push(p.fatherId);
+                }
+                if (p.motherId && database[p.motherId] && !nextLevelIds.includes(p.motherId)) {
+                    nextLevelIds.push(p.motherId);
+                }
+            }
+        });
+        currentLevelIds = nextLevelIds;
+    }
+
+    let html = '';
+    const genLabels = ["ANCHOR", "PARENTS", "GRANDPARENTS", "GREAT-GRANDPARENTS"];
+
+    generations.forEach((ids, index) => {
+        let label = genLabels[index] || `GENERATION ${index + 1}`;
+        html += `
+            <div class="pedigree-generation-column">
+                <div style="font-family:'Cinzel',serif; font-size:0.7rem; color:var(--accent); letter-spacing:1px; text-align:center; margin-bottom:10px; align-self: center;">${label}</div>
+                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 100%; gap: 15px;">
+        `;
+        
+        if (ids.length === 0) {
+            html += `<div class="person-card" style="opacity: 0.4;"><div class="person-name">None Recorded</div></div>`;
+        } else {
+            ids.forEach(id => {
+                if (database[id]) {
+                    if (index === 0) {
+                        let p = database[id];
+                        let bYear = extractYear(p.dob);
+                        let dYear = extractYear(p.dod);
+                        html += `
+                            <div class="person-card" onclick="openDrawer('${id}')" style="border-left-color: var(--gold); background: #fff5ec;">
+                                <div class="person-name">★ ${p.name}</div>
+                                <div class="person-dates">${bYear} – ${dYear}</div>
+                                <div class="card-relation-summary"><strong>Role:</strong> Pedigree Root</div>
+                            </div>
+                        `;
+                    } else {
+                        html += renderPersonCard(id);
+                    }
+                }
+            });
+        }
+        html += `</div></div>`;
+    });
+
+    // Collateral / Sibling column
     let rootPerson = database[currentRootId];
-    let bYear = extractYear(rootPerson.dob);
-    let dYear = extractYear(rootPerson.dod);
-
-    let html = `
-        <!-- Column 1: Current Anchor -->
-        <div class="pedigree-generation-column">
-            <div style="font-family:'Cinzel',serif; font-size:0.7rem; color:var(--gold); letter-spacing:1px; text-align:center; margin-bottom:5px;">ANCHOR</div>
-            <div class="person-card" onclick="openDrawer('${currentRootId}')" style="border-left-color: var(--gold); background: #fff5ec;">
-                <div class="person-name">★ ${rootPerson.name}</div>
-                <div class="person-dates">${bYear} – ${dYear}</div>
-                <div class="card-relation-summary"><strong>Role:</strong> Pedigree Root</div>
-            </div>
-        </div>
-
-        <!-- Column 2: Direct Parents -->
-        <div class="pedigree-generation-column">
-            <div style="font-family:'Cinzel',serif; font-size:0.7rem; color:var(--accent); letter-spacing:1px; text-align:center; margin-bottom:5px;">PARENTS</div>
-    `;
-
-    let father = database[rootPerson.fatherId];
-    let mother = database[rootPerson.motherId];
-
-    if (father) {
-        html += renderPersonCard(rootPerson.fatherId);
-    } else {
-        html += `<div class="person-card" style="opacity: 0.6;"><div class="person-name">Unknown Father</div><div class="person-dates">----</div></div>`;
-    }
-
-    if (mother) {
-        html += renderPersonCard(rootPerson.motherId);
-    } else {
-        html += `<div class="person-card" style="opacity: 0.6;"><div class="person-name">Unknown Mother</div><div class="person-dates">----</div></div>`;
-    }
-
-    html += `</div>`; // Close Parents Column
-
-    // Column 3: Collateral / Siblings (Expandable)
-    let siblings = rootPerson.siblingIds || [];
+    let siblings = rootPerson ? (rootPerson.siblingIds || []) : [];
     if (siblings.length > 0) {
         html += `
-            <div class="pedigree-generation-column" style="justify-content: flex-start; align-self: center;">
-                <button class="small-btn" onclick="toggleCollaterals()" id="collateral-toggle-btn" style="height: fit-content;">
+            <div class="pedigree-generation-column" style="justify-content: flex-start;">
+                <div style="font-family:'Cinzel',serif; font-size:0.7rem; color:var(--accent); letter-spacing:1px; text-align:center; margin-bottom:10px;">COLLATERAL</div>
+                <button class="small-btn" onclick="toggleCollaterals()" id="collateral-toggle-btn" style="margin-bottom: 10px;">
                     ▶ Siblings (${siblings.length})
                 </button>
-                <div id="collateral-container" style="display: none; margin-top: 10px; display: flex; flex-direction: column; gap: 10px;">
-                    <div style="font-family:'Cinzel',serif; font-size:0.7rem; color:var(--accent); letter-spacing:1px;">Siblings</div>
+                <div id="collateral-container" style="display: none; flex-direction: column; gap: 10px;">
         `;
         siblings.forEach(sId => {
             if (database[sId]) {
                 html += renderPersonCard(sId);
             }
         });
-        html += `
-                </div>
-            </div>
-        `;
+        html += `</div></div>`;
     }
 
     containerEl.innerHTML = html;
