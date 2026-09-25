@@ -102,8 +102,8 @@
         "pod": "Winona, MO",
         "cemetery": "Mt. Zion Cemetery",
         "cemeteryLocation": "Winona, MO",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "othur_herbert__buck__brawley_571",
+        "motherId": "maudie_lee_vaugh_839",
         "spouseIds": [
             "judy_alice_blunk_758"
         ],
@@ -222,6 +222,40 @@
         "siblingIds": [],
         "childIds": [
             "dessie_clara_shomaker_844"
+        ],
+        "bio": ""
+    },
+    "othur_herbert__buck__brawley_571": {
+        "name": "Othur Herbert 'Buck' Brawley",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "ronald_dean_brawley_401"
+        ],
+        "bio": ""
+    },
+    "maudie_lee_vaugh_839": {
+        "name": "Maudie Lee Vaugh",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "ronald_dean_brawley_401"
         ],
         "bio": ""
     }
