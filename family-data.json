@@ -121,8 +121,8 @@
         "pod": "",
         "cemetery": "",
         "cemeteryLocation": "",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "claud_elvin_blunk_832",
+        "motherId": "lina_evelyn_benton_537",
         "spouseIds": [
             "ronald_dean_brawley_401"
         ],
@@ -260,6 +260,40 @@
         "siblingIds": [],
         "childIds": [
             "ronald_dean_brawley_401"
+        ],
+        "bio": ""
+    },
+    "claud_elvin_blunk_832": {
+        "name": "Claud Elvin Blunk",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "judy_alice_blunk_758"
+        ],
+        "bio": ""
+    },
+    "lina_evelyn_benton_537": {
+        "name": "Lina Evelyn Benton",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "judy_alice_blunk_758"
         ],
         "bio": ""
     }
