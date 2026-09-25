@@ -825,6 +825,7 @@
 
 function calculateGenerations() {
     let genMap = {};
+    // Find a solid root person to anchor the tree (e.g., George Washington Smith or your dad)
     let roots = Object.keys(database).filter(id => id === 'root' || database[id].name.includes("George Washington Smith") || database[id].name.includes("Teddy Ray Yates"));
     if(roots.length === 0 && Object.keys(database).length > 0) {
         roots = [Object.keys(database)[0]];
@@ -834,36 +835,62 @@ function calculateGenerations() {
 
     let changed = true;
     let loops = 0;
-    while(changed && loops < 15) {
+    while(changed && loops < 20) {
         changed = false;
         loops++;
         for(let id in database) {
             let p = database[id];
-            
-            // AUTOMATIC INHERITANCE: If a person shares parents with someone already mapped, sync their tier!
-            for(let otherId in database) {
-                if(genMap[otherId] !== undefined && genMap[id] === undefined) {
-                    let other = database[otherId];
-                    if((p.fatherId && p.fatherId === other.fatherId) || (p.motherId && p.motherId === other.motherId)) {
-                        genMap[id] = genMap[otherId];
+            let curGen = genMap[id];
+
+            if(curGen !== undefined) {
+                // Parents must ALWAYS be one generation ABOVE (curGen - 1)
+                if(p.fatherId) {
+                    if(genMap[p.fatherId] === undefined || genMap[p.fatherId] > curGen - 1) {
+                        genMap[p.fatherId] = curGen - 1;
                         changed = true;
                     }
                 }
-            }
+                if(p.motherId) {
+                    if(genMap[p.motherId] === undefined || genMap[p.motherId] > curGen - 1) {
+                        genMap[p.motherId] = curGen - 1;
+                        changed = true;
+                    }
+                }
 
-            if(genMap[id] !== undefined) {
-                let curGen = genMap[id];
-                if(p.fatherId && genMap[p.fatherId] === undefined) { genMap[p.fatherId] = curGen - 1; changed = true; }
-                if(p.motherId && genMap[p.motherId] === undefined) { genMap[p.motherId] = curGen - 1; changed = true; }
+                // Children must ALWAYS be one generation BELOW (curGen + 1)
                 if(p.childIds) {
                     p.childIds.forEach(cId => {
-                        if(genMap[cId] === undefined) { genMap[cId] = curGen + 1; changed = true; }
+                        if(genMap[cId] === undefined || genMap[cId] < curGen + 1) {
+                            genMap[cId] = curGen + 1;
+                            changed = true;
+                        }
                     });
                 }
+
+                // Spouses share the exact same generation tier (curGen)
                 if(p.spouseIds) {
                     p.spouseIds.forEach(sId => {
-                        if(genMap[sId] === undefined) { genMap[sId] = curGen; changed = true; }
+                        if(genMap[sId] === undefined) {
+                            genMap[sId] = curGen;
+                            changed = true;
+                        }
                     });
+                }
+            }
+        }
+
+        // Second pass: Ensure individuals sharing the exact same father or mother sync to the same tier
+        for(let id in database) {
+            let p = database[id];
+            for(let otherId in database) {
+                if(id !== otherId && genMap[otherId] !== undefined) {
+                    let other = database[otherId];
+                    if((p.fatherId && p.fatherId === other.fatherId) || (p.motherId && p.motherId === other.motherId)) {
+                        if(genMap[id] === undefined || genMap[id] !== genMap[otherId]) {
+                            genMap[id] = genMap[otherId];
+                            changed = true;
+                        }
+                    }
                 }
             }
         }
@@ -900,7 +927,7 @@ function renderTree() {
             let coupleHtml = '';
             let groupMemberIds = [id];
 
-            // Automatically pull in siblings sharing the same parents into this family group row
+            // Pull in siblings who share the same parents into this exact same horizontal row
             tierIds.forEach(otherId => {
                 if(otherId !== id && !processed.has(otherId)) {
                     let otherP = database[otherId];
@@ -910,7 +937,7 @@ function renderTree() {
                 }
             });
 
-            // Check for spouses to cluster couples together
+            // Find active spouses on this same tier to cluster them side-by-side
             let activeSpouses = [];
             groupMemberIds.forEach(mId => {
                 let member = database[mId];
@@ -935,6 +962,7 @@ function renderTree() {
         });
 
         containerHTML += `
+            <div style="text-align:center; font-family:'Cinzel',serif; font-size:0.75rem; color:var(--accent); margin-top:10px; margin-bottom:-30px; letter-spacing:1px;">Generation Tier ${g}</div>
             <div class="generation-tier-row">
                 ${tierCardsHTML}
             </div>
