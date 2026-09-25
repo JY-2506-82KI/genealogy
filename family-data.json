@@ -227,15 +227,17 @@
     },
     "othur_herbert__buck__brawley_571": {
         "name": "Othur Herbert 'Buck' Brawley",
-        "dob": "",
-        "pob": "",
-        "dod": "",
-        "pod": "",
-        "cemetery": "",
-        "cemeteryLocation": "",
+        "dob": "1/25/1911",
+        "pob": "Missouri",
+        "dod": "7//1966",
+        "pod": "Shannon County, MO",
+        "cemetery": "Mt. Zion Cemetery",
+        "cemeteryLocation": "Winona, MO",
         "fatherId": "",
         "motherId": "",
-        "spouseIds": [],
+        "spouseIds": [
+            "maudie_lee_vaugh_839"
+        ],
         "siblingIds": [],
         "childIds": [
             "ronald_dean_brawley_401"
@@ -252,7 +254,9 @@
         "cemeteryLocation": "",
         "fatherId": "",
         "motherId": "",
-        "spouseIds": [],
+        "spouseIds": [
+            "othur_herbert__buck__brawley_571"
+        ],
         "siblingIds": [],
         "childIds": [
             "ronald_dean_brawley_401"
