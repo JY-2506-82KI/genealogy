@@ -418,14 +418,22 @@
         </div>
     </div>
 
-    <!-- Side Drawer -->
+<!-- Side Drawer -->
     <div class="overlay" id="overlay" onclick="closeDrawer()"></div>
     <div id="drawer">
         <button class="close-btn" onclick="closeDrawer()">&times;</button>
         <div id="drawer-view-mode">
+            
+            <!-- PASTE BUTTON RIGHT HERE -->
+            <button onclick="setTreeRoot(currentOpenPersonId)" style="width: 100%; margin-bottom: 15px; background: var(--accent); color: white; border: none; padding: 8px; border-radius: 4px; cursor: pointer; font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 1px;">
+                ★ Set as Pedigree Root
+            </button>
+            <!-- END OF BUTTON -->
+
             <h2 class="drawer-title" id="d-name">Name</h2>
             
             <div class="section-heading">Birth & Death</div>
+            <div class="detail-row"><span class="detail-label">Birth</span><span id="d-birth-info"></span></div>
             <div class="detail-row"><span class="detail-label">Birth</span><span id="d-birth-info"></span></div>
             <div class="detail-row"><span class="detail-label">Death</span><span id="d-death-info"></span></div>
             <div class="detail-row"><span class="detail-label">Cemetery</span><span id="d-cemetery-info"></span></div>
@@ -528,6 +536,13 @@
     </div>
 
     <script>
+    let currentRootId = localStorage.getItem('family_tree_root') || 'root';
+    let currentOpenPersonId = null;
+
+    let database = {
+        "root": {
+
+        
         let database = {
             "root": {
                 name: "George Washington Smith",
@@ -1068,7 +1083,7 @@ function renderTree() {
         }
 
         function openDrawer(id) {
-            currentOpenId = id;
+            currentOpenPersonId = id;
             let person = database[id];
             if (!person) return;
 
@@ -1087,8 +1102,8 @@ function renderTree() {
             let fatherObj = database[person.fatherId];
             let motherObj = database[person.motherId];
 
-            document.getElementById('d-father').innerText = fatherObj ? fatherObj.name : 'Not recorded';
-            document.getElementById('d-mother').innerText = motherObj ? motherObj.name : 'Not recorded';
+            document.getElementById('d-father').innerHTML = fatherObj ? `<a href="#" onclick="openDrawer('${person.fatherId}'); return false;" style="color: var(--accent); text-decoration: underline;">${fatherObj.name}</a>` : 'Not recorded';
+            document.getElementById('d-mother').innerHTML = motherObj ? `<a href="#" onclick="openDrawer('${person.motherId}'); return false;" style="color: var(--accent); text-decoration: underline;">${motherObj.name}</a>` : 'Not recorded';
 
             let allSpouses = new Set([...(person.spouseIds || [])]);
             for(let otherId in database) {
@@ -1096,11 +1111,27 @@ function renderTree() {
                 if(other.spouseIds && other.spouseIds.includes(id)) allSpouses.add(otherId);
             }
             let spouseNames = Array.from(allSpouses).map(sId => database[sId] ? database[sId].name : sId);
-            document.getElementById('d-spouses').innerText = spouseNames.length > 0 ? spouseNames.join(', ') : 'Not recorded';
+            let spouseHtml = 'Not recorded';
+            if (person.spouseIds && person.spouseIds.length > 0) {
+                spouseHtml = person.spouseIds.map(id => {
+                    let sObj = database[id];
+                    let sName = sObj ? sObj.name : id;
+                    return `<a href="#" onclick="openDrawer('${id}'); return false;" style="color: var(--accent); text-decoration: underline; margin-right: 8px;">${sName}</a>`;
+                }).join(', ');
+            }
+            document.getElementById('d-spouses').innerHTML = spouseHtml;
 
             let sibNames = (person.siblingIds || []).map(sId => database[sId] ? database[sId].name : sId);
-            document.getElementById('d-siblings').innerText = sibNames.length > 0 ? sibNames.join(', ') : 'Not recorded';
-
+            let siblingHtml = 'Not recorded';
+            if (person.siblingIds && person.siblingIds.length > 0) {
+                siblingHtml = person.siblingIds.map(id => {
+                    let sibObj = database[id];
+                    let sibName = sibObj ? sibObj.name : id;
+                    return `<a href="#" onclick="openDrawer('${id}'); return false;" style="color: var(--accent); text-decoration: underline; margin-right: 8px;">${sibName}</a>`;
+                }).join(', ');
+            }
+            document.getElementById('d-siblings').innerHTML = siblingHtml;
+            
             let allChildren = new Set([...(person.childIds || [])]);
             for(let otherId in database) {
                 let other = database[otherId];
@@ -1109,7 +1140,15 @@ function renderTree() {
                 }
             }
             let childNames = Array.from(allChildren).map(cId => database[cId] ? database[cId].name : cId);
-            document.getElementById('d-children').innerText = childNames.length > 0 ? childNames.join(', ') : 'Not recorded';
+            let childHtml = 'Not recorded';
+            if (person.childIds && person.childIds.length > 0) {
+                childHtml = person.childIds.map(id => {
+                    let childObj = database[id];
+                    let childName = childObj ? childObj.name : id;
+                    return `<a href="#" onclick="openDrawer('${id}'); return false;" style="color: var(--accent); text-decoration: underline; margin-right: 8px;">${childName}</a>`;
+                }).join(', ');
+            }
+            document.getElementById('d-children').innerHTML = childHtml;
 
             document.getElementById('d-bio').innerText = person.bio || 'No biographical notes recorded.';
 
@@ -1205,6 +1244,15 @@ function renderTree() {
             document.getElementById('drawer').classList.remove('open');
             document.getElementById('overlay').classList.remove('active');
         }
+
+        function setTreeRoot(id) {
+    if (!database[id]) return;
+    currentRootId = id;
+    localStorage.setItem('family_tree_root', id);
+    closeDrawer();
+    renderTree();
+    console.log(`Pedigree root shifted to ${database[id].name}`);
+}        
     </script>
 </body>
 </html>
