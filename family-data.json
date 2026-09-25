@@ -189,15 +189,17 @@
     },
     "theodore__ted__shomaker_670": {
         "name": "Theodore 'Ted' Shomaker",
-        "dob": "",
-        "pob": "",
-        "dod": "",
-        "pod": "",
-        "cemetery": "",
-        "cemeteryLocation": "",
+        "dob": "9/3/1902",
+        "pob": "Carter County, MO",
+        "dod": "3/11/1974",
+        "pod": "Shannon County, MO",
+        "cemetery": "Pine Lawn Cemetery",
+        "cemeteryLocation": "Winona, MO",
         "fatherId": "",
         "motherId": "",
-        "spouseIds": [],
+        "spouseIds": [
+            "rachel_helen_yardley_345"
+        ],
         "siblingIds": [],
         "childIds": [
             "dessie_clara_shomaker_844"
@@ -214,7 +216,9 @@
         "cemeteryLocation": "",
         "fatherId": "",
         "motherId": "",
-        "spouseIds": [],
+        "spouseIds": [
+            "theodore__ted__shomaker_670"
+        ],
         "siblingIds": [],
         "childIds": [
             "dessie_clara_shomaker_844"
