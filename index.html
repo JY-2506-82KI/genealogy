@@ -823,126 +823,126 @@
             if(viewName === 'add') populateFormFields('new');
         }
 
-        function calculateGenerations() {
-            let genMap = {};
-            let roots = Object.keys(database).filter(id => id === 'root' || database[id].name.includes("George Washington Smith"));
-            if(roots.length === 0 && Object.keys(database).length > 0) {
-                roots = [Object.keys(database)[0]];
-            }
+function calculateGenerations() {
+    let genMap = {};
+    let roots = Object.keys(database).filter(id => id === 'root' || database[id].name.includes("George Washington Smith") || database[id].name.includes("Teddy Ray Yates"));
+    if(roots.length === 0 && Object.keys(database).length > 0) {
+        roots = [Object.keys(database)[0]];
+    }
 
-            roots.forEach(rId => genMap[rId] = 0);
+    roots.forEach(rId => genMap[rId] = 0);
 
-            let changed = true;
-            let loops = 0;
-            while(changed && loops < 15) {
-                changed = false;
-                loops++;
-                for(let id in database) {
-                    let p = database[id];
-                    if(genMap[id] !== undefined) {
-                        let curGen = genMap[id];
-                        if(p.fatherId && genMap[p.fatherId] === undefined) { genMap[p.fatherId] = curGen - 1; changed = true; }
-                        if(p.motherId && genMap[p.motherId] === undefined) { genMap[p.motherId] = curGen - 1; changed = true; }
-                        if(p.childIds) {
-                            p.childIds.forEach(cId => {
-                                if(genMap[cId] === undefined) { genMap[cId] = curGen + 1; changed = true; }
-                            });
-                        }
-                        if(p.spouseIds) {
-                            p.spouseIds.forEach(sId => {
-                                if(genMap[sId] === undefined) { genMap[sId] = curGen; changed = true; }
-                            });
-                        }
-                        if(p.siblingIds) {
-                            p.siblingIds.forEach(sId => {
-                                if(genMap[sId] === undefined) { genMap[sId] = curGen; changed = true; }
-                            });
-                        }
+    let changed = true;
+    let loops = 0;
+    while(changed && loops < 15) {
+        changed = false;
+        loops++;
+        for(let id in database) {
+            let p = database[id];
+            
+            // AUTOMATIC INHERITANCE: If a person shares parents with someone already mapped, sync their tier!
+            for(let otherId in database) {
+                if(genMap[otherId] !== undefined && genMap[id] === undefined) {
+                    let other = database[otherId];
+                    if((p.fatherId && p.fatherId === other.fatherId) || (p.motherId && p.motherId === other.motherId)) {
+                        genMap[id] = genMap[otherId];
+                        changed = true;
                     }
                 }
             }
 
-            for(let id in database) {
-                let p = database[id];
-                if(genMap[id] === undefined) {
-                    if(p.childIds) {
-                        for(let cId of p.childIds) {
-                            if(genMap[cId] !== undefined) { genMap[id] = genMap[cId] - 1; break; }
-                        }
-                    }
-                    if(genMap[id] === undefined && p.spouseIds) {
-                        for(let sId of p.spouseIds) {
-                            if(genMap[sId] !== undefined) { genMap[id] = genMap[sId]; break; }
-                        }
-                    }
-                }
-            }
-
-            for(let id in database) {
-                if(genMap[id] === undefined) genMap[id] = 0;
-            }
-            return genMap;
-        }
-
-        function renderTree() {
-            let genMap = calculateGenerations();
-            let tiers = {};
-
-            for(let id in database) {
-                let g = genMap[id];
-                if(!tiers[g]) tiers[g] = [];
-                tiers[g].push(id);
-            }
-
-            let sortedGens = Object.keys(tiers).map(Number).sort((a, b) => a - b);
-            let containerHTML = '';
-
-            sortedGens.forEach(g => {
-                let tierIds = [...tiers[g]];
-                let processed = new Set();
-                let tierCardsHTML = '';
-
-                tierIds.forEach(id => {
-                    if(processed.has(id)) return;
-
-                    let p = database[id];
-                    let coupleHtml = '';
-
-                    let activeSpouses = (p.spouseIds || []).filter(sId => tierIds.includes(sId) && !processed.has(sId));
-                    tierIds.forEach(sId => {
-                        if(!processed.has(sId) && sId !== id) {
-                            let spObj = database[sId];
-                            if(spObj && spObj.spouseIds && spObj.spouseIds.includes(id)) {
-                                if(!activeSpouses.includes(sId)) activeSpouses.push(sId);
-                            }
-                        }
+            if(genMap[id] !== undefined) {
+                let curGen = genMap[id];
+                if(p.fatherId && genMap[p.fatherId] === undefined) { genMap[p.fatherId] = curGen - 1; changed = true; }
+                if(p.motherId && genMap[p.motherId] === undefined) { genMap[p.motherId] = curGen - 1; changed = true; }
+                if(p.childIds) {
+                    p.childIds.forEach(cId => {
+                        if(genMap[cId] === undefined) { genMap[cId] = curGen + 1; changed = true; }
                     });
+                }
+                if(p.spouseIds) {
+                    p.spouseIds.forEach(sId => {
+                        if(genMap[sId] === undefined) { genMap[sId] = curGen; changed = true; }
+                    });
+                }
+            }
+        }
+    }
 
-                    if(activeSpouses.length > 0) {
-                        coupleHtml += renderPersonCard(id);
-                        processed.add(id);
+    for(let id in database) {
+        if(genMap[id] === undefined) genMap[id] = 0;
+    }
+    return genMap;
+}
 
-                        activeSpouses.forEach(sId => {
-                            coupleHtml += renderPersonCard(sId);
-                            processed.add(sId);
-                        });
+function renderTree() {
+    let genMap = calculateGenerations();
+    let tiers = {};
 
-                        tierCardsHTML += `<div class="couple-group">${coupleHtml}</div>`;
-                    } else {
-                        tierCardsHTML += renderPersonCard(id);
-                        processed.add(id);
+    for(let id in database) {
+        let g = genMap[id];
+        if(!tiers[g]) tiers[g] = [];
+        tiers[g].push(id);
+    }
+
+    let sortedGens = Object.keys(tiers).map(Number).sort((a, b) => a - b);
+    let containerHTML = '';
+
+    sortedGens.forEach(g => {
+        let tierIds = [...tiers[g]];
+        let processed = new Set();
+        let tierCardsHTML = '';
+
+        tierIds.forEach(id => {
+            if(processed.has(id)) return;
+
+            let p = database[id];
+            let coupleHtml = '';
+            let groupMemberIds = [id];
+
+            // Automatically pull in siblings sharing the same parents into this family group row
+            tierIds.forEach(otherId => {
+                if(otherId !== id && !processed.has(otherId)) {
+                    let otherP = database[otherId];
+                    if((p.fatherId && p.fatherId === otherP.fatherId) || (p.motherId && p.motherId === otherP.motherId)) {
+                        if(!groupMemberIds.includes(otherId)) groupMemberIds.push(otherId);
                     }
-                });
-
-                containerHTML += `
-                    <div class="generation-tier-row">
-                        ${tierCardsHTML}
-                    </div>
-                `;
+                }
             });
 
-            document.getElementById('treeContainer').innerHTML = containerHTML || '<p style="font-style:italic;">No family members recorded.</p>';
-        }
+            // Check for spouses to cluster couples together
+            let activeSpouses = [];
+            groupMemberIds.forEach(mId => {
+                let member = database[mId];
+                (member.spouseIds || []).forEach(sId => {
+                    if(tierIds.includes(sId) && !processed.has(sId) && !groupMemberIds.includes(sId)) {
+                        if(!activeSpouses.includes(sId)) activeSpouses.push(sId);
+                    }
+                });
+            });
+
+            groupMemberIds.forEach(mId => {
+                coupleHtml += renderPersonCard(mId);
+                processed.add(mId);
+            });
+
+            activeSpouses.forEach(sId => {
+                coupleHtml += renderPersonCard(sId);
+                processed.add(sId);
+            });
+
+            tierCardsHTML += `<div class="couple-group">${coupleHtml}</div>`;
+        });
+
+        containerHTML += `
+            <div class="generation-tier-row">
+                ${tierCardsHTML}
+            </div>
+        `;
+    });
+
+    document.getElementById('treeContainer').innerHTML = containerHTML || '<p style="font-style:italic;">No family members recorded.</p>';
+}
 
         function renderPersonCard(id) {
             let p = database[id];
