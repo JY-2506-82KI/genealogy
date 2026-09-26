@@ -327,7 +327,9 @@
             "marvin_howard_yates_228",
             "nanette_yates_872"
         ],
-        "childIds": [],
+        "childIds": [
+            "roger_dale_yates_358"
+        ],
         "bio": ""
     },
     "nanette_yates_872": {
@@ -362,6 +364,21 @@
         "siblingIds": [
             "judy_alice_blunk_758"
         ],
+        "childIds": [],
+        "bio": ""
+    },
+    "roger_dale_yates_358": {
+        "name": "Roger Dale Yates",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
         "childIds": [],
         "bio": ""
     }
