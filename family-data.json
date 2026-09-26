@@ -322,7 +322,9 @@
         "cemeteryLocation": "Birch Tree, MO",
         "fatherId": "marvin_yates_226",
         "motherId": "dolly_e_clemons_265",
-        "spouseIds": [],
+        "spouseIds": [
+            "betty_jean_harper_658"
+        ],
         "siblingIds": [
             "marvin_howard_yates_228",
             "nanette_yates_872"
@@ -392,7 +394,9 @@
         "cemeteryLocation": "",
         "fatherId": "",
         "motherId": "",
-        "spouseIds": [],
+        "spouseIds": [
+            "freddy_d_yates_591"
+        ],
         "siblingIds": [],
         "childIds": [
             "roger_dale_yates_358"
