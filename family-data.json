@@ -375,11 +375,28 @@
         "pod": "",
         "cemetery": "",
         "cemeteryLocation": "",
+        "fatherId": "freddy_d_yates_591",
+        "motherId": "betty_jean_harper_658",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": "Roger Dale Yates was born Sept. 12, 1958, in Springfield, Mo., the son of Freddy Yates and Betty Jean (Harper) Yates-Volosin. He passed away Thursday June 4, 2009 in Springfield, MO at the age of 50 years. He was preceded in death by his father, Freddy Yates, and two sisters, Vikki Zinns and Twyla Yates. He is survived by his three sons James DeBroeck of Jefferson City, Mo.; Michael Yates of Mountain View, Mo., and Bradley Yates of Mountain View, Mo.; four daughters, Melody Russell and husband Jason of Mountain View, Mo., Jessica Yates of Mountain View, Mo., Sarah Yates of Mountain View, Mo., and Ashley Yates of Mountain View, Mo.; two granddaughters, Maci Russell of Mountain View, Mo., and Maybeline Clemens of Mountain View, Mo.; one brother, Johnny Volosin of Rolla, Mo.; two sisters, Robin Harrisson of Union Point, Ga., and Christy Volosin of Matoon, Ill.; and a host of other family and friends. Roger grew up in a military family, and lived in many areas of the country before graduating from high school in Kellogg, Idaho. He lived in Denver, Colo., for several years working as a data entry tech. He also worked briefly as a children's photographer and later at a greenhouse, both which he loved. He moved back to Rolla, Mo., and lived there for several years before relocating to Mountain View, Mo., in 1989. Roger worked at the boat factory in Mountain View for several years before it closed its doors. He was later employed at Sequel in Willow Springs. Roger enjoyed woodworking, making shelves, and bird houses among other things. He enjoyed gardening and canning vegetables. In his younger years, he couldn't get enough of the slopes in Idaho; he shared many memories of skiing in Kellogg. He loved the outdoors and enjoyed spending time at the river, particularly snorkeling. He loved music, music, music and more music. Although Roger himself didn't play music, all of his children are gifted with the ability to play music and sing. Roger loved to listen to his children and their friends when they would get together and play music. Roger will be sadly missed by all who knew and loved him. Funeral services were held Monday, June 8, 2009, at the Duncan Funeral Chapel in Mountain View with Pastor Brian Ingalls officiating. Interment was in Pinelawn Cemetery at Winona, Mo., under the direction of the Duncan Funeral Home of Mountain View."
+    },
+    "betty_jean_harper_658": {
+        "name": "Betty Jean Harper",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
         "fatherId": "",
         "motherId": "",
         "spouseIds": [],
         "siblingIds": [],
-        "childIds": [],
+        "childIds": [
+            "roger_dale_yates_358"
+        ],
         "bio": ""
     }
 }
