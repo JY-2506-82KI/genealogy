@@ -351,7 +351,8 @@
         "childIds": [
             "roger_dale_yates_358",
             "vikki_jean_yates_683",
-            "robin_yates_768"
+            "robin_yates_768",
+            "twyla_dawn_yates_290"
         ],
         "bio": ""
     },
@@ -430,7 +431,8 @@
         "childIds": [
             "roger_dale_yates_358",
             "vikki_jean_yates_683",
-            "robin_yates_768"
+            "robin_yates_768",
+            "twyla_dawn_yates_290"
         ],
         "bio": ""
     },
@@ -630,14 +632,14 @@
     },
     "twyla_dawn_yates_290": {
         "name": "Twyla Dawn Yates",
-        "dob": "",
-        "pob": "",
-        "dod": "",
+        "dob": "8/4/1964",
+        "pob": "Warrensburg, MO",
+        "dod": "4/7/2009",
         "pod": "",
         "cemetery": "",
         "cemeteryLocation": "",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "freddy_d_yates_591",
+        "motherId": "betty_jean_harper_658",
         "spouseIds": [],
         "siblingIds": [
             "roger_dale_yates_358",
