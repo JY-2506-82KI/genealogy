@@ -110,7 +110,9 @@
         "spouseIds": [
             "judy_alice_blunk_758"
         ],
-        "siblingIds": [],
+        "siblingIds": [
+            "william_keith__bill__brawley_315"
+        ],
         "childIds": [
             "p2_dummy"
         ],
@@ -275,7 +277,8 @@
         "siblingIds": [],
         "childIds": [
             "ronald_dean_brawley_401",
-            "william_keith__bill__brawley_315"
+            "william_keith__bill__brawley_315",
+            "allen_dwain_brawley_787"
         ],
         "bio": ""
     },
@@ -581,16 +584,19 @@
     },
     "allen_dwain_brawley_787": {
         "name": "Allen Dwain Brawley",
-        "dob": "",
-        "pob": "",
-        "dod": "",
-        "pod": "",
-        "cemetery": "",
-        "cemeteryLocation": "",
-        "fatherId": "",
-        "motherId": "",
+        "dob": "4/22/1944",
+        "pob": "Shannon County, MO",
+        "dod": "12/19/1960",
+        "pod": "Oregon County, MO",
+        "cemetery": "Mt. Zion Cemetery",
+        "cemeteryLocation": "Winona, MO",
+        "fatherId": "othur_herbert__buck__brawley_571",
+        "motherId": "maudie_lee_vaugh_839",
         "spouseIds": [],
-        "siblingIds": [],
+        "siblingIds": [
+            "william_keith__bill__brawley_315",
+            "ronald_dean_brawley_401"
+        ],
         "childIds": [],
         "bio": ""
     }
