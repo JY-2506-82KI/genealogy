@@ -1518,12 +1518,12 @@
     },
     "mary_catherine_norris_831": {
         "name": "Mary Catherine Norris",
-        "dob": "",
-        "pob": "",
-        "dod": "",
-        "pod": "",
-        "cemetery": "",
-        "cemeteryLocation": "",
+        "dob": "9//1855",
+        "pob": "Lawrence County, OH",
+        "dod": "6/15/1922",
+        "pod": "Low Wassie, MO",
+        "cemetery": "Mt. Zion Cemetery",
+        "cemeteryLocation": "Winona, MO",
         "fatherId": "",
         "motherId": "",
         "spouseIds": [
