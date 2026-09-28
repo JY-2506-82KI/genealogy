@@ -330,8 +330,8 @@
         "pod": "Oregon County, MO",
         "cemetery": "Bailey Cemetery",
         "cemeteryLocation": "Oregon County, MO",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "james_finley_benton_jr_577",
+        "motherId": "girtrude_levada_lewallen_894",
         "spouseIds": [
             "claud_elvin_blunk_832"
         ],
@@ -1719,6 +1719,40 @@
         "siblingIds": [],
         "childIds": [
             "claud_elvin_blunk_832"
+        ],
+        "bio": ""
+    },
+    "james_finley_benton_jr_577": {
+        "name": "James Finley Benton Jr",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "lina_evelyn_benton_537"
+        ],
+        "bio": ""
+    },
+    "girtrude_levada_lewallen_894": {
+        "name": "Girtrude LeVada Lewallen",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "lina_evelyn_benton_537"
         ],
         "bio": ""
     }
