@@ -285,8 +285,8 @@
         "pod": "Birch Tree, MO",
         "cemetery": "Mt. Zion Cemetery",
         "cemeteryLocation": "Winona, MO",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "henry_alexander_vaugh_371",
+        "motherId": "mary_f_vaughn_107",
         "spouseIds": [
             "othur_herbert__buck__brawley_571"
         ],
@@ -1652,6 +1652,40 @@
         "spouseIds": [],
         "siblingIds": [],
         "childIds": [],
+        "bio": ""
+    },
+    "henry_alexander_vaugh_371": {
+        "name": "Henry Alexander Vaugh",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "maudie_lee_vaugh_839"
+        ],
+        "bio": ""
+    },
+    "mary_f_vaughn_107": {
+        "name": "Mary F Vaughn",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "maudie_lee_vaugh_839"
+        ],
         "bio": ""
     }
 }
