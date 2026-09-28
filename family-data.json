@@ -718,7 +718,8 @@
         "siblingIds": [
             "helen_nora_shomaker_750",
             "betty_jo_shomaker_743",
-            "albert_william_shomaker_sr_845"
+            "albert_william_shomaker_sr_845",
+            "dessie_clara_shomaker_844"
         ],
         "childIds": [],
         "bio": ""
@@ -808,7 +809,16 @@
             "dessie_clara_shomaker_844",
             "betty_jo_shomaker_743"
         ],
-        "childIds": [],
+        "childIds": [
+            "cindy_marie_shomaker_887",
+            "rebecca_shomaker_484",
+            "loree_shomaker_632",
+            "sheila_shomaker_531",
+            "albert_w_shomaker_jr_538",
+            "kathy_shomaker_112",
+            "jamie_shomaker_548",
+            "melissa_shomaker_408"
+        ],
         "bio": ""
     },
     "gene_edward_norton_544": {
@@ -1219,6 +1229,126 @@
         "spouseIds": [
             "albert_william_shomaker_sr_845"
         ],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "cindy_marie_shomaker_887": {
+        "name": "Cindy Marie Shomaker",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "rebecca_shomaker_484": {
+        "name": "Rebecca Shomaker",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "loree_shomaker_632": {
+        "name": "Loree Shomaker",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "sheila_shomaker_531": {
+        "name": "Sheila Shomaker",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "albert_w_shomaker_jr_538": {
+        "name": "Albert W Shomaker Jr",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "kathy_shomaker_112": {
+        "name": "Kathy Shomaker",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "jamie_shomaker_548": {
+        "name": "Jamie Shomaker",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "melissa_shomaker_408": {
+        "name": "Melissa Shomaker",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
         "siblingIds": [],
         "childIds": [],
         "bio": ""
