@@ -1467,12 +1467,12 @@
     },
     "lura_bessie_reese_145": {
         "name": "Lura Bessie Reese",
-        "dob": "",
-        "pob": "",
-        "dod": "",
-        "pod": "",
-        "cemetery": "",
-        "cemeteryLocation": "",
+        "dob": "7/26/1911",
+        "pob": "Mountain View, MO",
+        "dod": "11/11/2000",
+        "pod": "Rawlins, WY",
+        "cemetery": "Saratoga Cemetery",
+        "cemeteryLocation": "Saratoga, WY",
         "fatherId": "",
         "motherId": "",
         "spouseIds": [
