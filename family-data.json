@@ -1947,7 +1947,10 @@
         "fatherId": "jim_david_vanwinkle_154",
         "motherId": "perlina_jane_mayberry_785",
         "spouseIds": [],
-        "siblingIds": [],
+        "siblingIds": [
+            "william_thomas_vanwinkle_388",
+            "vada_m_vanwinkle_106"
+        ],
         "childIds": [],
         "bio": ""
     },
