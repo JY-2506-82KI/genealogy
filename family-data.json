@@ -1438,16 +1438,19 @@
     },
     "mary_jane_yates_485": {
         "name": "Mary Jane Yates",
-        "dob": "",
-        "pob": "",
-        "dod": "",
-        "pod": "",
+        "dob": "3/20/1919",
+        "pob": "Low Wassie, MO",
+        "dod": "6/10/1919",
+        "pod": "Low Wassie, MO",
         "cemetery": "",
         "cemeteryLocation": "",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "martin_yates_946",
+        "motherId": "mary_jane_denning_537",
         "spouseIds": [],
-        "siblingIds": [],
+        "siblingIds": [
+            "fredrick_yates_510",
+            "marvin_yates_226"
+        ],
         "childIds": [],
         "bio": ""
     },
