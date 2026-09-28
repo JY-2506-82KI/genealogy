@@ -1087,7 +1087,9 @@
             "kerry_norris_568"
         ],
         "siblingIds": [],
-        "childIds": [],
+        "childIds": [
+            "lauren_norris_266"
+        ],
         "bio": ""
     },
     "lauren_norris_266": {
@@ -1098,8 +1100,8 @@
         "pod": "",
         "cemetery": "",
         "cemeteryLocation": "",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "kerry_norris_568",
+        "motherId": "lynne_sharp_218",
         "spouseIds": [],
         "siblingIds": [],
         "childIds": [],
