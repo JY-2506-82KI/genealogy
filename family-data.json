@@ -293,7 +293,8 @@
             "judy_alice_blunk_758",
             "joyce_ann_blunk_345",
             "joe_auda_blunk_496",
-            "jack_blunk_126"
+            "jack_blunk_126",
+            "jesse_e_blunk_686"
         ],
         "bio": ""
     },
@@ -315,7 +316,8 @@
             "judy_alice_blunk_758",
             "joyce_ann_blunk_345",
             "joe_auda_blunk_496",
-            "jack_blunk_126"
+            "jack_blunk_126",
+            "jesse_e_blunk_686"
         ],
         "bio": ""
     },
@@ -373,7 +375,8 @@
         "siblingIds": [
             "judy_alice_blunk_758",
             "joe_auda_blunk_496",
-            "jack_blunk_126"
+            "jack_blunk_126",
+            "jesse_e_blunk_686"
         ],
         "childIds": [],
         "bio": ""
@@ -428,7 +431,8 @@
         "siblingIds": [
             "judy_alice_blunk_758",
             "joyce_ann_blunk_345",
-            "jack_blunk_126"
+            "jack_blunk_126",
+            "jesse_e_blunk_686"
         ],
         "childIds": [],
         "bio": "Joe Auda Blunk, 74, died on April 27, 2013, at home. He was born on April 26, 1939, in Stone County at Galena, Mo.   Joe was married to Patsy Ann Elliott on Aug. 26, 1961, in Birch Tree, Mo. To this blessed union, two children were born, Beverly Jean and Joe Alan.   In 1957, Joe moved to Winona with his mom and family to run a farm. He spent his early life working as a farmhand for Bill Johnson, then spent several years until retirement working at several mills. (Those included TJ Moss, Moss America, Kerr McGee, Smith Flooring, Wayne Johnson, Robert McAdams, Dry Camp and Bob Johnson.) Shortly after marrying Patsy, Joe was drafted into the United States Army in 1962. He spent two years in service, 18 months of which in Germany. His ranking was SP4 when he returned home. Joe has spent the last several years doing the things he loved. He became a member of the Free Will Baptist Church in Van Buren, Mo., in 2011. Poppy loved spending time with all his grandchildren, beaming as each one of them did something he thought was outstanding. He was especially proud of those who are or have graduated high school and college. He enjoyed reading his Bible, working cattle, telling stories, (even wild ones about him fighting the Indians), hunting and fishing, and spending time with family and friends. He enjoyed eating Nana's cooking and visiting with Greg and Debbie on his trips to the farm. Poppy will be sadly missed by all who knew and loved him.   Joe was preceded in death by his parents, Claud Elvin and Lina Blunk; father and mother-in-law, Alva and Hazel Elliott; three brothers, Jim, Jesse, and Jack Blunk; and several brother-in-laws and sister-in-laws.   He is survived by his wife, Patsy, of the home; one daughter, Beverly (Trenton) of Ellington; and one son Joe (Genia) of Winona, Mo. Joe was blessed with seven grandchildren, who all called him \"Poppy,\" and he had a special nickname for each of them as well. CeJay (Jive Turkey) Price of Springfield, Mo., Airin (Dude Rat) and husband Robert Haselwander of Rolla, Lina (Tweety Bird) Price and fiancee, Brandon Whited, Frances (Boo-Who) Price, and Spencer (Spud) Price, all of Ellington, Adam (Bodean) Blunk and Billy (My Little Buddy) Blunk of Winona; two sisters, Judy Brawley and Joyce Pulliam of Winona; and one step-brother, Luther (Susie) Mack of Cleveland, Mo., as well as a host of brother-in-laws, sister-in-laws, nieces, nephews, cousins, and friends.   It was the wish of Joe to be buried on his homeplace in Winona. Graveside services were held April 28, and were officiated by Bro. Wayne Lunyou. Pallbearers were Vic Elliott, Michael Elliott, Jason Yates, Brandon Whited, Greg Foster, Ronnie Chilton, and Ryan Norris. Honorary pallbearers were Spencer Price and Adam Blunk. pd.  "
@@ -464,21 +468,22 @@
         "siblingIds": [
             "joe_auda_blunk_496",
             "joyce_ann_blunk_345",
-            "judy_alice_blunk_758"
+            "judy_alice_blunk_758",
+            "jesse_e_blunk_686"
         ],
         "childIds": [],
         "bio": "Jack Blunk, 67, passed away at his Poway home on March 2, 2009. Mr. Blunk was born on December 1, 1941, in Galena, Missouri. He grew up on the family farm and during high school set many track and field records, many of which still stand today. For most of his adult life, Jack worked as a pharmaceutical sales representative where he set many sales records which, once again, will never be broken. He was an avid golfer and always dreamed of playing on the Senior PGA Tour. He will be remembered for his work ethic, sense of humor, laughter and a positive attitude.\nMr. Blunk is survived by his children, David Allen Blunk, Deborah Kay Kuhse and Cydne Rebecca Bartley; his grandchildren, Kelci, Alaisa, Megan, Shanae, Brandon, Brianna and Dylan; great-granddaughter, Taydom; brother, Joe Blunk; and sisters, Judy Brawley and Joyce Pulliam.\nA Memorial Service celebrating Jack's life was held on Sunday, March 8, 2009, at Poway-Bernardo Mortuary. If Jack were here today he would thank everybody for making him feel part of their family. He would say thank you for the love and laughter and would say to his buddies – \"I will see you at the 19th hole.\""
     },
     "jesse_e_blunk_686": {
         "name": "Jesse E Blunk",
-        "dob": "",
-        "pob": "",
-        "dod": "",
-        "pod": "",
-        "cemetery": "",
-        "cemeteryLocation": "",
-        "fatherId": "",
-        "motherId": "",
+        "dob": "5/4/1934",
+        "pob": "Galena, MO",
+        "dod": "5/18/1992",
+        "pod": "Battleground, WA",
+        "cemetery": "Lewisville Cemetery",
+        "cemeteryLocation": "Battleground, WA",
+        "fatherId": "claud_elvin_blunk_832",
+        "motherId": "lina_evelyn_benton_537",
         "spouseIds": [],
         "siblingIds": [
             "judy_alice_blunk_758",
