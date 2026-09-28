@@ -350,7 +350,8 @@
         ],
         "childIds": [
             "roger_dale_yates_358",
-            "vikki_jean_yates_683"
+            "vikki_jean_yates_683",
+            "robin_yates_768"
         ],
         "bio": ""
     },
@@ -428,7 +429,8 @@
         "siblingIds": [],
         "childIds": [
             "roger_dale_yates_358",
-            "vikki_jean_yates_683"
+            "vikki_jean_yates_683",
+            "robin_yates_768"
         ],
         "bio": ""
     },
@@ -653,12 +655,13 @@
         "pod": "",
         "cemetery": "",
         "cemeteryLocation": "",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "freddy_d_yates_591",
+        "motherId": "betty_jean_harper_658",
         "spouseIds": [],
         "siblingIds": [
             "roger_dale_yates_358",
-            "vikki_jean_yates_683"
+            "vikki_jean_yates_683",
+            "twyla_dawn_yates_290"
         ],
         "childIds": [],
         "bio": ""
