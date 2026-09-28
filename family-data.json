@@ -220,7 +220,10 @@
         "siblingIds": [],
         "childIds": [
             "cecil_e_yardley_328",
-            "dessie_clara_shomaker_844"
+            "helen_nora_shomaker_750",
+            "betty_jo_shomaker_743",
+            "dessie_clara_shomaker_844",
+            "albert_william_shomaker_sr_845"
         ],
         "bio": ""
     },
@@ -719,6 +722,51 @@
         "spouseIds": [
             "cecil_e_yardley_328"
         ],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "helen_nora_shomaker_750": {
+        "name": "Helen Nora Shomaker",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "betty_jo_shomaker_743": {
+        "name": "Betty Jo Shomaker",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "albert_william_shomaker_sr_845": {
+        "name": "Albert William Shomaker Sr",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
         "siblingIds": [],
         "childIds": [],
         "bio": ""
