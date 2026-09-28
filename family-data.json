@@ -1916,9 +1916,9 @@
     },
     "jim_david_vanwinkle_154": {
         "name": "Jim David VanWinkle",
-        "dob": "",
+        "dob": "1865",
         "pob": "",
-        "dod": "",
+        "dod": "1890",
         "pod": "",
         "cemetery": "",
         "cemeteryLocation": "",
@@ -1927,6 +1927,55 @@
         "spouseIds": [
             "perlina_jane_mayberry_785"
         ],
+        "siblingIds": [],
+        "childIds": [
+            "john_m_vanwinkle_501",
+            "william_thomas_vanwinkle_388",
+            "vada_m_vanwinkle_106"
+        ],
+        "bio": ""
+    },
+    "john_m_vanwinkle_501": {
+        "name": "John M VanWinkle",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "william_thomas_vanwinkle_388": {
+        "name": "William Thomas VanWinkle",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "vada_m_vanwinkle_106": {
+        "name": "Vada M VanWinkle",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
         "siblingIds": [],
         "childIds": [],
         "bio": ""
