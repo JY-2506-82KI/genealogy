@@ -242,7 +242,8 @@
         ],
         "siblingIds": [],
         "childIds": [
-            "dessie_clara_shomaker_844"
+            "dessie_clara_shomaker_844",
+            "helen_nora_shomaker_750"
         ],
         "bio": ""
     },
@@ -728,17 +729,26 @@
     },
     "helen_nora_shomaker_750": {
         "name": "Helen Nora Shomaker",
-        "dob": "",
-        "pob": "",
-        "dod": "",
-        "pod": "",
-        "cemetery": "",
-        "cemeteryLocation": "",
-        "fatherId": "",
-        "motherId": "",
-        "spouseIds": [],
-        "siblingIds": [],
-        "childIds": [],
+        "dob": "11/14/1931",
+        "pob": "Winona, MO",
+        "dod": "9/9/1977",
+        "pod": "Springfield, MO",
+        "cemetery": "Mt. Zion Cemetery",
+        "cemeteryLocation": "Winona, MO",
+        "fatherId": "theodore__ted__shomaker_670",
+        "motherId": "rachel_helen_yardley_345",
+        "spouseIds": [
+            "gene_edward_norton_544"
+        ],
+        "siblingIds": [
+            "cecil_e_yardley_328",
+            "betty_jo_shomaker_743",
+            "dessie_clara_shomaker_844",
+            "albert_william_shomaker_sr_845"
+        ],
+        "childIds": [
+            "leland_eugene_norton_689"
+        ],
         "bio": ""
     },
     "betty_jo_shomaker_743": {
@@ -758,6 +768,38 @@
     },
     "albert_william_shomaker_sr_845": {
         "name": "Albert William Shomaker Sr",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "gene_edward_norton_544": {
+        "name": "Gene Edward Norton",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [
+            "helen_nora_shomaker_750"
+        ],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "leland_eugene_norton_689": {
+        "name": "Leland Eugene Norton",
         "dob": "",
         "pob": "",
         "dod": "",
