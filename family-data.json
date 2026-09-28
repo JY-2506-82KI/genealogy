@@ -1584,7 +1584,8 @@
         "fatherId": "",
         "motherId": "",
         "spouseIds": [
-            "joseph_henry_clemons_659"
+            "joseph_henry_clemons_659",
+            "jim_david_vanwinkle_154"
         ],
         "siblingIds": [],
         "childIds": [
@@ -1910,6 +1911,23 @@
             "jessie_inez_clemons_206",
             "dolly_e_clemons_265"
         ],
+        "childIds": [],
+        "bio": ""
+    },
+    "jim_david_vanwinkle_154": {
+        "name": "Jim David VanWinkle",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [
+            "perlina_jane_mayberry_785"
+        ],
+        "siblingIds": [],
         "childIds": [],
         "bio": ""
     }
