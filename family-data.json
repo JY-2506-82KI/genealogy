@@ -671,6 +671,25 @@
     },
     "goldie_l_yardley_350": {
         "name": "Goldie L Yardley",
+        "dob": "1/31/1906",
+        "pob": "Oregon County, MO",
+        "dod": "3/17/1926",
+        "pod": "Fremont, MO",
+        "cemetery": "Freeman Cemetery",
+        "cemeteryLocation": "Fremont, MO",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [
+            "theodore__ted__shomaker_670"
+        ],
+        "siblingIds": [],
+        "childIds": [
+            "cecil_e_yardley_328"
+        ],
+        "bio": ""
+    },
+    "cecil_e_yardley_328": {
+        "name": "Cecil E Yardley",
         "dob": "",
         "pob": "",
         "dod": "",
@@ -679,9 +698,7 @@
         "cemeteryLocation": "",
         "fatherId": "",
         "motherId": "",
-        "spouseIds": [
-            "theodore__ted__shomaker_670"
-        ],
+        "spouseIds": [],
         "siblingIds": [],
         "childIds": [],
         "bio": ""
