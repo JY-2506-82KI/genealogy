@@ -880,16 +880,18 @@
     },
     "delbert_jackson_brawley_501": {
         "name": "Delbert Jackson Brawley",
-        "dob": "",
+        "dob": "3/15/1917",
         "pob": "",
-        "dod": "",
+        "dod": "3/15/1969",
         "pod": "",
-        "cemetery": "",
-        "cemeteryLocation": "",
-        "fatherId": "",
-        "motherId": "",
+        "cemetery": "Mt. Zion Cemetery",
+        "cemeteryLocation": "Winona, MO",
+        "fatherId": "charles_newton__charley__brawley_143",
+        "motherId": "drucilla_floyd_rook_689",
         "spouseIds": [],
-        "siblingIds": [],
+        "siblingIds": [
+            "othur_herbert__buck__brawley_571"
+        ],
         "childIds": [
             "rita_gale_brawley_250"
         ],
@@ -909,6 +911,40 @@
         "siblingIds": [],
         "childIds": [
             "rita_gale_brawley_250"
+        ],
+        "bio": ""
+    },
+    "charles_newton__charley__brawley_143": {
+        "name": "Charles Newton 'Charley' Brawley",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "delbert_jackson_brawley_501"
+        ],
+        "bio": ""
+    },
+    "drucilla_floyd_rook_689": {
+        "name": "Drucilla Floyd Rook",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "delbert_jackson_brawley_501"
         ],
         "bio": ""
     }
