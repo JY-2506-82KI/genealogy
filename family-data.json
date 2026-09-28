@@ -1766,7 +1766,9 @@
         "cemeteryLocation": "Birch Tree, MO",
         "fatherId": "",
         "motherId": "",
-        "spouseIds": [],
+        "spouseIds": [
+            "mahala_jane_mayberry_482"
+        ],
         "siblingIds": [],
         "childIds": [
             "martin_yates_946"
@@ -1783,7 +1785,9 @@
         "cemeteryLocation": "",
         "fatherId": "",
         "motherId": "",
-        "spouseIds": [],
+        "spouseIds": [
+            "berry_yates_660"
+        ],
         "siblingIds": [],
         "childIds": [
             "martin_yates_946"
