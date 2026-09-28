@@ -1376,18 +1376,22 @@
     },
     "martin_yates_946": {
         "name": "Martin Yates",
-        "dob": "",
-        "pob": "",
-        "dod": "",
-        "pod": "",
-        "cemetery": "",
-        "cemeteryLocation": "",
+        "dob": "11/16/1891",
+        "pob": "Van Buren, MO",
+        "dod": "1/3/1953",
+        "pod": "Birch Tree, MO",
+        "cemetery": "Oak Forest Cemetery",
+        "cemeteryLocation": "Birch Tree, MO",
         "fatherId": "",
         "motherId": "",
-        "spouseIds": [],
+        "spouseIds": [
+            "mary_jane_denning_537"
+        ],
         "siblingIds": [],
         "childIds": [
-            "marvin_yates_226"
+            "fredrick_yates_510",
+            "marvin_yates_226",
+            "mary_jane_yates_485"
         ],
         "bio": ""
     },
@@ -1401,11 +1405,43 @@
         "cemeteryLocation": "",
         "fatherId": "",
         "motherId": "",
-        "spouseIds": [],
+        "spouseIds": [
+            "martin_yates_946"
+        ],
         "siblingIds": [],
         "childIds": [
             "marvin_yates_226"
         ],
+        "bio": ""
+    },
+    "fredrick_yates_510": {
+        "name": "Fredrick Yates",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "mary_jane_yates_485": {
+        "name": "Mary Jane Yates",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
         "bio": ""
     }
 }
