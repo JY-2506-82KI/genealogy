@@ -179,7 +179,9 @@
         "spouseIds": [
             "dolly_e_clemons_265"
         ],
-        "siblingIds": [],
+        "siblingIds": [
+            "mary_jane_yates_485"
+        ],
         "childIds": [
             "marvin_howard_yates_228",
             "freddy_d_yates_591",
@@ -1432,7 +1434,9 @@
         "spouseIds": [
             "lura_bessie_reese_145"
         ],
-        "siblingIds": [],
+        "siblingIds": [
+            "mary_jane_yates_485"
+        ],
         "childIds": [],
         "bio": ""
     },
@@ -1543,18 +1547,24 @@
     },
     "joseph_henry_clemons_659": {
         "name": "Joseph Henry Clemons",
-        "dob": "",
-        "pob": "",
-        "dod": "",
-        "pod": "",
-        "cemetery": "",
-        "cemeteryLocation": "",
+        "dob": "4/11/1880",
+        "pob": "Bland, MO",
+        "dod": "4/5/1959",
+        "pod": "Shannon County, MO",
+        "cemetery": "Mt. Zion Cemetery",
+        "cemeteryLocation": "Winona, MO",
         "fatherId": "",
         "motherId": "",
-        "spouseIds": [],
+        "spouseIds": [
+            "perlina_jane_mayberry_785"
+        ],
         "siblingIds": [],
         "childIds": [
-            "dolly_e_clemons_265"
+            "jackson_perry_clemons_442",
+            "mary_mae_clemons_185",
+            "jessie_inez_clemons_206",
+            "dolly_e_clemons_184",
+            "alta_clemons_598"
         ],
         "bio": ""
     },
@@ -1568,7 +1578,9 @@
         "cemeteryLocation": "",
         "fatherId": "",
         "motherId": "",
-        "spouseIds": [],
+        "spouseIds": [
+            "joseph_henry_clemons_659"
+        ],
         "siblingIds": [],
         "childIds": [
             "dolly_e_clemons_265"
@@ -1796,6 +1808,81 @@
         "childIds": [
             "martin_yates_946"
         ],
+        "bio": ""
+    },
+    "jackson_perry_clemons_442": {
+        "name": "Jackson Perry Clemons",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "mary_mae_clemons_185": {
+        "name": "Mary Mae Clemons",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "jessie_inez_clemons_206": {
+        "name": "Jessie Inez Clemons",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "dolly_e_clemons_184": {
+        "name": "Dolly E Clemons",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "alta_clemons_598": {
+        "name": "Alta Clemons",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
         "bio": ""
     }
 }
