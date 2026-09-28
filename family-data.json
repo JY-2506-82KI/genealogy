@@ -985,7 +985,7 @@
         "name": "Sonia Norris",
         "dob": "",
         "pob": "",
-        "dod": "",
+        "dod": "Living",
         "pod": "",
         "cemetery": "",
         "cemeteryLocation": "",
@@ -1014,7 +1014,9 @@
         "fatherId": "",
         "motherId": "",
         "spouseIds": [],
-        "siblingIds": [],
+        "siblingIds": [
+            "sonia_norris_289"
+        ],
         "childIds": [],
         "bio": ""
     },
