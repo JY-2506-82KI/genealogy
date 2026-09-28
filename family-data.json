@@ -205,7 +205,8 @@
         ],
         "siblingIds": [
             "jackson_perry_clemons_442",
-            "mary_mae_clemons_185"
+            "mary_mae_clemons_185",
+            "alta_clemons_598"
         ],
         "childIds": [
             "marvin_howard_yates_228",
@@ -1574,12 +1575,12 @@
     },
     "perlina_jane_mayberry_785": {
         "name": "Perlina Jane Mayberry",
-        "dob": "",
-        "pob": "",
-        "dod": "",
-        "pod": "",
-        "cemetery": "",
-        "cemeteryLocation": "",
+        "dob": "11/28/1870",
+        "pob": "Winona, MO",
+        "dod": "1/6/1958",
+        "pod": "Winona, MO",
+        "cemetery": "Mt. Zion Cemetery",
+        "cemeteryLocation": "Winona, MO",
         "fatherId": "",
         "motherId": "",
         "spouseIds": [
@@ -1588,7 +1589,7 @@
         "siblingIds": [],
         "childIds": [
             "dolly_e_clemons_265",
-            "dolly_e_clemons_184",
+            "jessie_inez_clemons_206",
             "jackson_perry_clemons_442",
             "mary_mae_clemons_185",
             "alta_clemons_598"
@@ -1871,7 +1872,8 @@
         "spouseIds": [],
         "siblingIds": [
             "jackson_perry_clemons_442",
-            "mary_mae_clemons_185"
+            "mary_mae_clemons_185",
+            "alta_clemons_598"
         ],
         "childIds": [],
         "bio": ""
