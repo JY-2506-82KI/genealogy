@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genealogy</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <style>
+<style>
         :root {
             --bg-color: #f4ecdf;
             --paper-color: #faf5ee;
@@ -247,7 +247,7 @@
             background: var(--paper-color);
             border-left: 3px solid var(--accent);
             box-shadow: -5px 0 15px rgba(0,0,0,0.2);
-            transition: right 0.3s ease;
+            transition: right 0.3s ease, bottom 0.3s ease;
             z-index: 1000;
             padding: 30px;
             box-sizing: border-box;
@@ -296,6 +296,27 @@
             display: none; z-index: 999;
         }
         .overlay.active { display: block; }
+
+        /* Mobile Bottom Sheet Override (Option 2) */
+        @media (max-width: 600px) {
+            #drawer {
+                top: auto;
+                bottom: -100%;
+                left: 0;
+                right: 0;
+                width: 100% !important;
+                height: 80vh;
+                border-radius: 20px 20px 0 0;
+                border-left: none;
+                border-top: 3px solid var(--accent);
+                box-shadow: 0 -5px 20px rgba(0,0,0,0.15);
+                padding: 20px 20px 40px 20px;
+            }
+            #drawer.open {
+                bottom: 0;
+                right: 0;
+            }
+        }
     </style>
 </head>
 <body>
