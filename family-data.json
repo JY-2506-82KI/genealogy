@@ -214,7 +214,8 @@
         "fatherId": "",
         "motherId": "",
         "spouseIds": [
-            "rachel_helen_yardley_345"
+            "rachel_helen_yardley_345",
+            "goldie_l_yardley_350"
         ],
         "siblingIds": [],
         "childIds": [
@@ -665,6 +666,23 @@
             "vikki_jean_yates_683",
             "twyla_dawn_yates_290"
         ],
+        "childIds": [],
+        "bio": ""
+    },
+    "goldie_l_yardley_350": {
+        "name": "Goldie L Yardley",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [
+            "theodore__ted__shomaker_670"
+        ],
+        "siblingIds": [],
         "childIds": [],
         "bio": ""
     }
