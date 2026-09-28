@@ -245,7 +245,8 @@
         "siblingIds": [],
         "childIds": [
             "dessie_clara_shomaker_844",
-            "helen_nora_shomaker_750"
+            "helen_nora_shomaker_750",
+            "betty_jo_shomaker_743"
         ],
         "bio": ""
     },
@@ -262,7 +263,9 @@
         "spouseIds": [
             "maudie_lee_vaugh_839"
         ],
-        "siblingIds": [],
+        "siblingIds": [
+            "delbert_jackson_brawley_501"
+        ],
         "childIds": [
             "ronald_dean_brawley_401",
             "william_keith__bill__brawley_315",
@@ -757,17 +760,22 @@
     },
     "betty_jo_shomaker_743": {
         "name": "Betty Jo Shomaker",
-        "dob": "",
-        "pob": "",
-        "dod": "",
-        "pod": "",
-        "cemetery": "",
-        "cemeteryLocation": "",
-        "fatherId": "",
-        "motherId": "",
-        "spouseIds": [],
+        "dob": "1/5/1934",
+        "pob": "Winona, MO",
+        "dod": "10/23/2019",
+        "pod": "West Plains, MO",
+        "cemetery": "Pine Lawn Cemetery",
+        "cemeteryLocation": "Winona, MO",
+        "fatherId": "theodore__ted__shomaker_670",
+        "motherId": "rachel_helen_yardley_345",
+        "spouseIds": [
+            "jerry_dwaine_norris_941"
+        ],
         "siblingIds": [
-            "helen_nora_shomaker_750"
+            "cecil_e_yardley_328",
+            "helen_nora_shomaker_750",
+            "dessie_clara_shomaker_844",
+            "albert_william_shomaker_sr_845"
         ],
         "childIds": [],
         "bio": ""
@@ -946,6 +954,23 @@
         "childIds": [
             "delbert_jackson_brawley_501"
         ],
+        "bio": ""
+    },
+    "jerry_dwaine_norris_941": {
+        "name": "Jerry Dwaine Norris",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [
+            "betty_jo_shomaker_743"
+        ],
+        "siblingIds": [],
+        "childIds": [],
         "bio": ""
     }
 }
