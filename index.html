@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Genealogy</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
@@ -105,22 +105,23 @@
         }
         /* Tree View */
         .tree-wrapper {
-        width: 100%;
-        overflow: auto; /* Enables smooth panning/scrolling on mobile and desktop */
-        padding: 20px 0;
-        border: 1px dashed var(--border-color);
-        background: rgba(250, 245, 238, 0.5);
-        border-radius: 6px;
-        -webkit-overflow-scrolling: touch; /* Momentum scrolling for iOS/phones */
+            width: 100%;
+            overflow: auto; 
+            padding: 40px 0; /* Gives breathing room at the top/bottom when zoomed out */
+            border: 1px dashed var(--border-color);
+            background: rgba(250, 245, 238, 0.5);
+            border-radius: 6px;
+            -webkit-overflow-scrolling: touch; 
+            touch-action: pan-x pan-y pinch-zoom; /* Explicitly enables smooth mobile pinch-zooming */
         }
 
         .tree-container {
-        display: flex;
-        flex-direction: row;
-        gap: 40px;
-        align-items: stretch; /* Ensures all generation columns share the same height bounds */
-        min-width: max-content;
-        padding: 20px;
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+            align-items: stretch; 
+            min-width: max-content;
+            padding: 40px; /* Generous padding so outer generations don't crowd the edges */
         }
         .pedigree-generation-column {
         display: flex;
