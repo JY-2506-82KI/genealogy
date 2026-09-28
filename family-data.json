@@ -1384,8 +1384,8 @@
         "pod": "Birch Tree, MO",
         "cemetery": "Oak Forest Cemetery",
         "cemeteryLocation": "Birch Tree, MO",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "berry_yates_660",
+        "motherId": "mahala_jane_mayberry_482",
         "spouseIds": [
             "mary_jane_denning_537",
             "electa_jane__lecty__herrell_239"
@@ -1753,6 +1753,40 @@
         "siblingIds": [],
         "childIds": [
             "lina_evelyn_benton_537"
+        ],
+        "bio": ""
+    },
+    "berry_yates_660": {
+        "name": "Berry Yates",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "martin_yates_946"
+        ],
+        "bio": ""
+    },
+    "mahala_jane_mayberry_482": {
+        "name": "Mahala Jane Mayberry",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "martin_yates_946"
         ],
         "bio": ""
     }
