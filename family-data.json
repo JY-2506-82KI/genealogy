@@ -1385,7 +1385,8 @@
         "fatherId": "",
         "motherId": "",
         "spouseIds": [
-            "mary_jane_denning_537"
+            "mary_jane_denning_537",
+            "electa_jane__lecty__herrell_239"
         ],
         "siblingIds": [],
         "childIds": [
@@ -1440,6 +1441,23 @@
         "fatherId": "",
         "motherId": "",
         "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "electa_jane__lecty__herrell_239": {
+        "name": "Electa Jane 'Lecty' Herrell",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [
+            "martin_yates_946"
+        ],
         "siblingIds": [],
         "childIds": [],
         "bio": ""
