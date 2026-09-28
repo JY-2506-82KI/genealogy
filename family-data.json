@@ -1595,7 +1595,8 @@
             "mary_mae_clemons_185",
             "alta_clemons_598",
             "john_m_vanwinkle_501",
-            "william_thomas_vanwinkle_388"
+            "william_thomas_vanwinkle_388",
+            "vada_m_vanwinkle_106"
         ],
         "bio": ""
     },
@@ -1981,11 +1982,12 @@
         "pod": "",
         "cemetery": "",
         "cemeteryLocation": "",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "jim_david_vanwinkle_154",
+        "motherId": "perlina_jane_mayberry_785",
         "spouseIds": [],
         "siblingIds": [
-            "john_m_vanwinkle_501"
+            "john_m_vanwinkle_501",
+            "william_thomas_vanwinkle_388"
         ],
         "childIds": [],
         "bio": ""
