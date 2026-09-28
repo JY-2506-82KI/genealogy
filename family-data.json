@@ -204,7 +204,8 @@
             "marvin_yates_226"
         ],
         "siblingIds": [
-            "jackson_perry_clemons_442"
+            "jackson_perry_clemons_442",
+            "mary_mae_clemons_185"
         ],
         "childIds": [
             "marvin_howard_yates_228",
@@ -1589,7 +1590,8 @@
             "dolly_e_clemons_265",
             "dolly_e_clemons_184",
             "jackson_perry_clemons_442",
-            "mary_mae_clemons_185"
+            "mary_mae_clemons_185",
+            "alta_clemons_598"
         ],
         "bio": ""
     },
@@ -1868,7 +1870,8 @@
         "motherId": "",
         "spouseIds": [],
         "siblingIds": [
-            "jackson_perry_clemons_442"
+            "jackson_perry_clemons_442",
+            "mary_mae_clemons_185"
         ],
         "childIds": [],
         "bio": ""
@@ -1896,11 +1899,14 @@
         "pod": "",
         "cemetery": "",
         "cemeteryLocation": "",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "joseph_henry_clemons_659",
+        "motherId": "perlina_jane_mayberry_785",
         "spouseIds": [],
         "siblingIds": [
-            "jackson_perry_clemons_442"
+            "jackson_perry_clemons_442",
+            "mary_mae_clemons_185",
+            "jessie_inez_clemons_206",
+            "dolly_e_clemons_265"
         ],
         "childIds": [],
         "bio": ""
