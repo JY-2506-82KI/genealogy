@@ -1411,21 +1411,24 @@
         ],
         "siblingIds": [],
         "childIds": [
-            "marvin_yates_226"
+            "marvin_yates_226",
+            "fredrick_yates_510"
         ],
         "bio": ""
     },
     "fredrick_yates_510": {
         "name": "Fredrick Yates",
-        "dob": "",
-        "pob": "",
-        "dod": "",
-        "pod": "",
-        "cemetery": "",
-        "cemeteryLocation": "",
-        "fatherId": "",
-        "motherId": "",
-        "spouseIds": [],
+        "dob": "5/11/1909",
+        "pob": "Low Wassie, MO",
+        "dod": "6/22/1971",
+        "pod": "Saratoga, WY",
+        "cemetery": "Saratoga Cemetery",
+        "cemeteryLocation": "Saratoga, WY",
+        "fatherId": "martin_yates_946",
+        "motherId": "mary_jane_denning_537",
+        "spouseIds": [
+            "lura_bessie_reese_145"
+        ],
         "siblingIds": [],
         "childIds": [],
         "bio": ""
@@ -1457,6 +1460,23 @@
         "motherId": "",
         "spouseIds": [
             "martin_yates_946"
+        ],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "lura_bessie_reese_145": {
+        "name": "Lura Bessie Reese",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [
+            "fredrick_yates_510"
         ],
         "siblingIds": [],
         "childIds": [],
