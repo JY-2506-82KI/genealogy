@@ -1021,6 +1021,7 @@
             "sonia_norris_289"
         ],
         "childIds": [
+            "ryan_norris_112",
             "lauren_norris_266"
         ],
         "bio": "Kerry Dwaine \"Horse\" Norris was born in Mountain View Missouri on October 20, 1964 to Jerry D and Betty Jo (Shomaker) Norris, and passed from this life on April 30, 2020 in Shannon County Missouri at the age of 55 years, 6 months, and 5 days.\nHorse was united in marriage to Lynne Sharp on May 5, 1990 and to this union one daughter was born.\nHorse was preceded in death by his Parents Jerry and Betty, maternal grandparents Ted and Rachel (Yardley) Shomaker, paternal grandparents Jim and Margie (Koogler) Norris, and \"Pops\" Jack Honeycutt.\nThose left to mourn his passing are his loving partner and best friend of 11 years Barbara Honeycutt of the home. Son Ryan (Tiffany) Norris of Winona, Daughters Lauren Norris (John Steiner III), Michelle Love (Brian), and Aerial Brooks (Kyle Surkamp) , Hollie Martin, Sons Nathan Martin (Ayla), Jacob Martin (Judi Kintz), Grandchildren Kaleb and Kasen Norris, Ella Norris, Ian Steiner, Nolan, Olivia, Parker, Daxton, and Allison Love, Keleigh, Levi, and Savannah Brooks, Korbin Martin, Richard Wilson, and Aiden Martin, wife Lynne Norris, Sister Loretta Madden (Sammy), Brother Kelvin Wallace (Letrica), Sister Sonia Redman (Ronald), special friends Dan and Angie Sartin, and a host of nieces, nephews, and friends.\nHorse had a passion for life, hunting, hotrods, and riding dirt roads in his 'Ol Roadee; but Horse treasured his family and friends above all else. His ability to love and his loyalty was unparalleled. Horse never knew a stranger, always had a funny story and loved to make people laugh. There was never a bigger heart placed in a person by God than what was placed in Kerry Norris. He loved going into the Cube to surprise his adopted kiddos Kendyl and Abby with Queso, and to give them all what he called \"A little hell\".\nThis world is a darker place without him in it, but we are all better for having known him.\n\nA Visitation will be held on Thursday, May 7, 2020 from 6-8 at the First Assembly of God Church in Winona, Mo. with a Graveside Service being held on Friday, May 8, 2020 at 11:00 a.m. in the Pine Lawn Cemetery in Winona, Mo."
@@ -1091,6 +1092,21 @@
     },
     "lauren_norris_266": {
         "name": "Lauren Norris",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "ryan_norris_112": {
+        "name": "Ryan Norris",
         "dob": "",
         "pob": "",
         "dod": "",
