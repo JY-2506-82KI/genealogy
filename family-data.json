@@ -288,7 +288,8 @@
         "siblingIds": [],
         "childIds": [
             "judy_alice_blunk_758",
-            "joyce_ann_blunk_345"
+            "joyce_ann_blunk_345",
+            "joe_auda_blunk_496"
         ],
         "bio": ""
     },
@@ -401,6 +402,21 @@
         "childIds": [
             "roger_dale_yates_358"
         ],
+        "bio": ""
+    },
+    "joe_auda_blunk_496": {
+        "name": "Joe Auda Blunk",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
         "bio": ""
     }
 }
