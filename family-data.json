@@ -349,7 +349,8 @@
             "nanette_yates_872"
         ],
         "childIds": [
-            "roger_dale_yates_358"
+            "roger_dale_yates_358",
+            "vikki_jean_yates_683"
         ],
         "bio": ""
     },
@@ -426,7 +427,8 @@
         ],
         "siblingIds": [],
         "childIds": [
-            "roger_dale_yates_358"
+            "roger_dale_yates_358",
+            "vikki_jean_yates_683"
         ],
         "bio": ""
     },
@@ -607,16 +609,20 @@
     },
     "vikki_jean_yates_683": {
         "name": "Vikki Jean Yates",
-        "dob": "",
-        "pob": "",
-        "dod": "",
+        "dob": "9/16/1955",
+        "pob": "Marshfield, MO",
+        "dod": "1//2010",
         "pod": "",
         "cemetery": "",
         "cemeteryLocation": "",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "freddy_d_yates_591",
+        "motherId": "betty_jean_harper_658",
         "spouseIds": [],
-        "siblingIds": [],
+        "siblingIds": [
+            "roger_dale_yates_358",
+            "twyla_dawn_yates_290",
+            "robin_yates_768"
+        ],
         "childIds": [],
         "bio": ""
     },
@@ -631,7 +637,9 @@
         "fatherId": "",
         "motherId": "",
         "spouseIds": [],
-        "siblingIds": [],
+        "siblingIds": [
+            "roger_dale_yates_358"
+        ],
         "childIds": [],
         "bio": ""
     },
@@ -646,7 +654,9 @@
         "fatherId": "",
         "motherId": "",
         "spouseIds": [],
-        "siblingIds": [],
+        "siblingIds": [
+            "roger_dale_yates_358"
+        ],
         "childIds": [],
         "bio": ""
     }
