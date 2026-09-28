@@ -788,17 +788,21 @@
     },
     "albert_william_shomaker_sr_845": {
         "name": "Albert William Shomaker Sr",
-        "dob": "",
-        "pob": "",
-        "dod": "",
-        "pod": "",
-        "cemetery": "",
-        "cemeteryLocation": "",
-        "fatherId": "",
-        "motherId": "",
-        "spouseIds": [],
+        "dob": "12/15/1940",
+        "pob": "Winona, MO",
+        "dod": "12/17/2007",
+        "pod": "Winona, MO",
+        "cemetery": "Pine Lawn Cemetery",
+        "cemeteryLocation": "Winona, MO",
+        "fatherId": "theodore__ted__shomaker_670",
+        "motherId": "rachel_helen_yardley_345",
+        "spouseIds": [
+            "carolyn_marie_yoder_335"
+        ],
         "siblingIds": [
+            "cecil_e_yardley_328",
             "helen_nora_shomaker_750",
+            "dessie_clara_shomaker_844",
             "betty_jo_shomaker_743"
         ],
         "childIds": [],
@@ -1196,6 +1200,23 @@
         "siblingIds": [
             "kaleb_norris_576"
         ],
+        "childIds": [],
+        "bio": ""
+    },
+    "carolyn_marie_yoder_335": {
+        "name": "Carolyn Marie Yoder",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [
+            "albert_william_shomaker_sr_845"
+        ],
+        "siblingIds": [],
         "childIds": [],
         "bio": ""
     }
