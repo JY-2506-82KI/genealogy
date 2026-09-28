@@ -976,11 +976,35 @@
             "betty_jo_shomaker_743"
         ],
         "siblingIds": [],
-        "childIds": [],
+        "childIds": [
+            "sonia_norris_289"
+        ],
         "bio": ""
     },
     "sonia_norris_289": {
         "name": "Sonia Norris",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "jerry_dwaine_norris_941",
+        "motherId": "betty_jo_shomaker_743",
+        "spouseIds": [
+            "ronnie_redman_207"
+        ],
+        "siblingIds": [
+            "kerry_norris_568"
+        ],
+        "childIds": [
+            "michelle_redman_169",
+            "susan_redman_197"
+        ],
+        "bio": ""
+    },
+    "kerry_norris_568": {
+        "name": "Kerry Norris",
         "dob": "",
         "pob": "",
         "dod": "",
@@ -994,8 +1018,40 @@
         "childIds": [],
         "bio": ""
     },
-    "kerry_norris_568": {
-        "name": "Kerry Norris",
+    "ronnie_redman_207": {
+        "name": "Ronnie Redman",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [
+            "sonia_norris_289"
+        ],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "michelle_redman_169": {
+        "name": "Michelle Redman",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "susan_redman_197": {
+        "name": "Susan Redman",
         "dob": "",
         "pob": "",
         "dod": "",
