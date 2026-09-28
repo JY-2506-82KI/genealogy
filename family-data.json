@@ -1230,7 +1230,9 @@
             "albert_william_shomaker_sr_845"
         ],
         "siblingIds": [],
-        "childIds": [],
+        "childIds": [
+            "loree_shomaker_632"
+        ],
         "bio": ""
     },
     "cindy_marie_shomaker_887": {
@@ -1264,19 +1266,21 @@
         "bio": ""
     },
     "loree_shomaker_632": {
-        "name": "Loree Shomaker",
-        "dob": "",
-        "pob": "",
-        "dod": "",
-        "pod": "",
+        "name": "Loree Ann Shomaker",
+        "dob": "5/23/1966",
+        "pob": "Alton, MO",
+        "dod": "6/29/2015",
+        "pod": "Dexter, MO",
         "cemetery": "",
         "cemeteryLocation": "",
-        "fatherId": "",
-        "motherId": "",
-        "spouseIds": [],
+        "fatherId": "albert_william_shomaker_sr_845",
+        "motherId": "carolyn_marie_yoder_335",
+        "spouseIds": [
+            "michael_brown_912"
+        ],
         "siblingIds": [],
         "childIds": [],
-        "bio": ""
+        "bio": "Loree Ann Brown, the daughter of Carolyn Yoder Shomaker and the late Albert Shomaker, Sr., was born in Alton, Missouri on May 23, 1966, and passed away at her home in Dexter, Missouri on June 29, 2015, at the age of 49 years, 1 months and 6 days. Mrs. Brown had lived in Urbana and Winona, Missouri before moving to Dexter ten years ago. She had worked as a server at the Elderland Restaurant in Bloomfield. She enjoyed camping and loved her family. She and her late husband, Michael, enjoyed buying and selling things they collected together. On March 12, 2005, she was married to Michael \"Mike\" Brown in Dexter, Missouri. He preceded her in death on June 30, 2014. Surviving are two sons, Michael Shemwell of Dexter, Missouri, Curtis Baker of Texas; two step-sons, Kevin Brown of Fort Hood, Texas, Dustin Brown of St. Joseph, Missouri; four step-grandchildren, Gabby, Brandie, Maddie and Kraylee Brown; her mother, Carolyn Shomaker of Dexter; one brother, Albert Shomaker, Jr. of Dexter, Missouri; six sisters, Kathy McCollom of Bloomfield, Cindy Shomaker, Shella Minehart and Jamie Ellsworth all of Dexter, Becky Martin of Denver, Colorado, Melissa Bibins of Seattle, Washington ; a niece, Tammy & John Sperino of Dexter. Other relatives and friends also survive. She was preceded in death by her father, Albert Shomaker, Sr., and her maternal grandmother, Ressie Yoder. Friends may visit on Friday, July 3, 2014, after 10:00 a.m. at the Grace Fellowship Church in Dexter, Missouri. Memorial services will be held on Friday, July 3, 2014, at 11:00 a.m. in the Grace Fellowship Church in Dexter, Missouri with Sister Karen Oldham Hardin of Dexter officiating. Dinner to follow services."
     },
     "sheila_shomaker_531": {
         "name": "Sheila Shomaker",
@@ -1349,6 +1353,23 @@
         "fatherId": "",
         "motherId": "",
         "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "michael_brown_912": {
+        "name": "Michael Brown",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [
+            "loree_shomaker_632"
+        ],
         "siblingIds": [],
         "childIds": [],
         "bio": ""
