@@ -1159,7 +1159,8 @@
         ],
         "siblingIds": [],
         "childIds": [
-            "kaleb_norris_576"
+            "kaleb_norris_576",
+            "kasen_norris_873"
         ],
         "bio": ""
     },
@@ -1188,10 +1189,12 @@
         "pod": "",
         "cemetery": "",
         "cemeteryLocation": "",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "ryan_norris_112",
+        "motherId": "tiffany_marie_mulvaney_794",
         "spouseIds": [],
-        "siblingIds": [],
+        "siblingIds": [
+            "kaleb_norris_576"
+        ],
         "childIds": [],
         "bio": ""
     }
