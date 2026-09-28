@@ -498,6 +498,23 @@
     },
     "loretha_ruth__lori__huettl_903": {
         "name": "Loretha Ruth 'Lori' Huettl",
+        "dob": "8/4/1936",
+        "pob": "Bend, OR",
+        "dod": "5/13/2010",
+        "pod": "Battleground, WA",
+        "cemetery": "Lewisville Cemetery",
+        "cemeteryLocation": "Battleground, WA",
+        "fatherId": "lurence_huettl_730",
+        "motherId": "",
+        "spouseIds": [
+            "jesse_e_blunk_686"
+        ],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": "Loretha \"Lori\" Ruth (Huettle) Blunk, 73, died of emphysema and heart failure May 13, 2010, in Battle Ground, WA.\nBlunk was born Aug. 4, 1936, in Bend, Or., lived in Bend for 18 years, then Portland for 13 years and Battle Ground area for 43 years. She enjoyed reading, gardening, quilting, camping and genealogy.\nShe worked a an office manager for optometrist Dr. Greg Barcus for 27 years.\nLori was preceded in death by her father, Lurence Huettl in 1964, mother Letha Huettl in 2002, husband Jesse Blunk in 1992, and brother Larry Huettl in 2000. Survivors include daughters Rebecca (Ruben) Silva and Joanne (Jimmie) Norman, both of Yacolt, Wa, and eight grandchildren.\nServices held Fri., May 21, at the Battle Ground Comunity Canter, Battle Ground WA with interment at Lewisville Cemetery. "
+    },
+    "lurence_huettl_730": {
+        "name": "Lurence Huettl",
         "dob": "",
         "pob": "",
         "dod": "",
@@ -506,11 +523,11 @@
         "cemeteryLocation": "",
         "fatherId": "",
         "motherId": "",
-        "spouseIds": [
-            "jesse_e_blunk_686"
-        ],
+        "spouseIds": [],
         "siblingIds": [],
-        "childIds": [],
+        "childIds": [
+            "loretha_ruth__lori__huettl_903"
+        ],
         "bio": ""
     }
 }
