@@ -1777,12 +1777,12 @@
     },
     "mahala_jane_mayberry_482": {
         "name": "Mahala Jane Mayberry",
-        "dob": "",
-        "pob": "",
-        "dod": "",
-        "pod": "",
-        "cemetery": "",
-        "cemeteryLocation": "",
+        "dob": "12/28/1872",
+        "pob": "Arkansas",
+        "dod": "8/12/1955",
+        "pod": "Poplar Bluff, MO",
+        "cemetery": "Oak Forest Cemetery",
+        "cemeteryLocation": "Birch Tree, MO",
         "fatherId": "",
         "motherId": "",
         "spouseIds": [
