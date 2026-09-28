@@ -27,6 +27,7 @@
             border-bottom: 2px solid var(--border-color);
             padding-bottom: 15px;
             margin-bottom: 25px;
+            position: relative; /* Needed for hamburger absolute positioning on mobile */
         }
         h1 {
             font-family: 'Cinzel', serif;
@@ -93,6 +94,21 @@
             font-family: 'Lora', serif;
             width: 250px;
         }
+        
+        /* Hamburger Button (Hidden on desktop) */
+        .hamburger-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--accent);
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 1001;
+        }
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
@@ -107,12 +123,12 @@
         .tree-wrapper {
             width: 100%;
             overflow: auto; 
-            padding: 40px 0; /* Gives breathing room at the top/bottom when zoomed out */
+            padding: 40px 0; 
             border: 1px dashed var(--border-color);
             background: rgba(250, 245, 238, 0.5);
             border-radius: 6px;
             -webkit-overflow-scrolling: touch; 
-            touch-action: pan-x pan-y pinch-zoom; /* Explicitly enables smooth mobile pinch-zooming */
+            touch-action: pan-x pan-y pinch-zoom; 
         }
 
         .tree-container {
@@ -121,21 +137,21 @@
             gap: 40px;
             align-items: stretch; 
             min-width: max-content;
-            padding: 40px; /* Generous padding so outer generations don't crowd the edges */
+            padding: 40px; 
         }
         .pedigree-generation-column {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around; /* Automatically centers cards vertically relative to adjacent columns */
-        min-width: 260px;
-        padding: 10px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around; 
+            min-width: 260px;
+            padding: 10px 0;
         }
 
         .generation-tier-row {
-        display: flex;
-        gap: 30px;
-        justify-content: center;
-        width: 100%;
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            width: 100%;
         }
         .couple-group {
             display: flex;
@@ -298,8 +314,46 @@
         }
         .overlay.active { display: block; }
 
-        /* Mobile Bottom Sheet Override (Option 2) */
+        /* Mobile Responsive Overrides */
         @media (max-width: 600px) {
+            header {
+                padding-right: 45px; /* Leave space for hamburger icon */
+            }
+            .hamburger-btn {
+                display: block;
+            }
+            
+            /* Hide the controls wrapper by default on mobile */
+            .controls-menu-wrapper {
+                display: none;
+                margin-top: 15px;
+                background: var(--paper-color);
+                border: 2px solid var(--border-color);
+                border-radius: 8px;
+                padding: 15px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            }
+            /* When toggled open via JS */
+            .controls-menu-wrapper.open {
+                display: block;
+            }
+            .controls {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .controls button, .controls input {
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .sync-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .sync-bar input {
+                width: 100% !important;
+            }
+
+            /* Bottom Sheet Drawer */
             #drawer {
                 top: auto;
                 bottom: -100%;
@@ -323,9 +377,14 @@
 <body>
 
     <header>
-        <h1>Genealogy</h1>
-        <p class="subtitle">Cloud-Synced via GitHub API</p>
+    <!-- 1. Added hamburger button for mobile -->
+    <button class="hamburger-btn" onclick="toggleMobileMenu()">&#9776;</button>
+    
+    <h1>Genealogy</h1>
+    <p class="subtitle">Cloud-Synced via GitHub API</p>
 
+    <!-- 2. Wrapped controls inside a toggleable menu container -->
+    <div id="appControlsMenu" class="controls-menu-wrapper">
         <!-- GitHub Sync Configuration Bar -->
         <div class="sync-bar">
             <span><strong>GitHub Sync:</strong></span>
@@ -342,7 +401,8 @@
             <button class="nav-btn" onclick="switchView('add', this)">+ Add Ancestor</button>
             <input type="text" id="searchInput" class="search-box" placeholder="Search archive..." oninput="handleSearch()">
         </div>
-    </header>
+    </div>
+</header>
 
     <div class="container">
         <!-- VIEW 1: PEDIGREE TREE -->
@@ -850,7 +910,13 @@
             let match = dateStr.match(/\b\d{4}\b/);
             return match ? match[0] : dateStr;
         }
-
+        // Toggle the mobile menu dropdown when the hamburger icon is tapped
+        function toggleMobileMenu() {
+            const menuWrapper = document.getElementById('appControlsMenu');
+            if (menuWrapper) {
+                menuWrapper.classList.toggle('open');
+            }
+        }
         function switchView(viewName, btn) {
             document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
