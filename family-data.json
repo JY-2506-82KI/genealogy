@@ -306,8 +306,8 @@
         "pod": "Galena, MO",
         "cemetery": "Galena Cemetery",
         "cemeteryLocation": "Galena, MO",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "clarence_jasper_blunk_168",
+        "motherId": "sarah_catherine_yocum_133",
         "spouseIds": [
             "lina_evelyn_benton_537"
         ],
@@ -1685,6 +1685,40 @@
         "siblingIds": [],
         "childIds": [
             "maudie_lee_vaugh_839"
+        ],
+        "bio": ""
+    },
+    "clarence_jasper_blunk_168": {
+        "name": "Clarence Jasper Blunk",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "claud_elvin_blunk_832"
+        ],
+        "bio": ""
+    },
+    "sarah_catherine_yocum_133": {
+        "name": "Sarah Catherine Yocum",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "claud_elvin_blunk_832"
         ],
         "bio": ""
     }
