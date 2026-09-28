@@ -133,7 +133,8 @@
             "joyce_ann_blunk_345",
             "joe_auda_blunk_496",
             "jack_blunk_126",
-            "jesse_e_blunk_686"
+            "jesse_e_blunk_686",
+            "jim_blunk_828"
         ],
         "childIds": [
             "p2_dummy"
@@ -528,6 +529,21 @@
         "childIds": [
             "loretha_ruth__lori__huettl_903"
         ],
+        "bio": ""
+    },
+    "jim_blunk_828": {
+        "name": "Jim Blunk",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
         "bio": ""
     }
 }
