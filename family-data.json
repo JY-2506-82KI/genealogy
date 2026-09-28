@@ -1484,15 +1484,17 @@
     },
     "perry_denning_967": {
         "name": "Perry Denning",
-        "dob": "",
-        "pob": "",
-        "dod": "",
-        "pod": "",
-        "cemetery": "",
-        "cemeteryLocation": "",
+        "dob": "12/2/1844",
+        "pob": "Lawrence County, OH",
+        "dod": "2/3/1916",
+        "pod": "Low Wassie, MO",
+        "cemetery": "Mt. Zion Cemetery",
+        "cemeteryLocation": "Winona, MO",
         "fatherId": "",
         "motherId": "",
-        "spouseIds": [],
+        "spouseIds": [
+            "mary_catherine_norris_831"
+        ],
         "siblingIds": [],
         "childIds": [
             "mary_jane_denning_537"
@@ -1524,7 +1526,9 @@
         "cemeteryLocation": "",
         "fatherId": "",
         "motherId": "",
-        "spouseIds": [],
+        "spouseIds": [
+            "perry_denning_967"
+        ],
         "siblingIds": [],
         "childIds": [
             "mary_jane_denning_537"
