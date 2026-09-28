@@ -1824,7 +1824,12 @@
         "fatherId": "joseph_henry_clemons_659",
         "motherId": "perlina_jane_mayberry_785",
         "spouseIds": [],
-        "siblingIds": [],
+        "siblingIds": [
+            "mary_mae_clemons_185",
+            "jessie_inez_clemons_206",
+            "dolly_e_clemons_265",
+            "alta_clemons_598"
+        ],
         "childIds": [],
         "bio": ""
     },
