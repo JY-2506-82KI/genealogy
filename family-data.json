@@ -484,13 +484,32 @@
         "cemeteryLocation": "Battleground, WA",
         "fatherId": "claud_elvin_blunk_832",
         "motherId": "lina_evelyn_benton_537",
-        "spouseIds": [],
+        "spouseIds": [
+            "loretha_ruth__lori__huettl_903"
+        ],
         "siblingIds": [
             "judy_alice_blunk_758",
             "joe_auda_blunk_496",
             "joyce_ann_blunk_345",
             "jack_blunk_126"
         ],
+        "childIds": [],
+        "bio": ""
+    },
+    "loretha_ruth__lori__huettl_903": {
+        "name": "Loretha Ruth 'Lori' Huettl",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [
+            "jesse_e_blunk_686"
+        ],
+        "siblingIds": [],
         "childIds": [],
         "bio": ""
     }
