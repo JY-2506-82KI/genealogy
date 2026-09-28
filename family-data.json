@@ -216,8 +216,8 @@
         "pod": "Shannon County, MO",
         "cemetery": "Pine Lawn Cemetery",
         "cemeteryLocation": "Winona, MO",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "william_albert_shomaker_jr_980",
+        "motherId": "rebecca_sharp_104",
         "spouseIds": [
             "goldie_l_yardley_350",
             "rachel_helen_yardley_345"
@@ -1566,6 +1566,40 @@
         "siblingIds": [],
         "childIds": [
             "dolly_e_clemons_265"
+        ],
+        "bio": ""
+    },
+    "william_albert_shomaker_jr_980": {
+        "name": "William Albert Shomaker Jr",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "theodore__ted__shomaker_670"
+        ],
+        "bio": ""
+    },
+    "rebecca_sharp_104": {
+        "name": "Rebecca Sharp",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "theodore__ted__shomaker_670"
         ],
         "bio": ""
     }
