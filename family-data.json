@@ -90,7 +90,9 @@
         "spouseIds": [
             "marvin_howard_yates_228"
         ],
-        "siblingIds": [],
+        "siblingIds": [
+            "helen_nora_shomaker_750"
+        ],
         "childIds": [
             "p1",
             "frances_helen_yates_990"
@@ -706,7 +708,9 @@
         "spouseIds": [
             "virginia_caldwell_402"
         ],
-        "siblingIds": [],
+        "siblingIds": [
+            "helen_nora_shomaker_750"
+        ],
         "childIds": [],
         "bio": ""
     },
@@ -762,7 +766,9 @@
         "fatherId": "",
         "motherId": "",
         "spouseIds": [],
-        "siblingIds": [],
+        "siblingIds": [
+            "helen_nora_shomaker_750"
+        ],
         "childIds": [],
         "bio": ""
     },
@@ -777,7 +783,9 @@
         "fatherId": "",
         "motherId": "",
         "spouseIds": [],
-        "siblingIds": [],
+        "siblingIds": [
+            "helen_nora_shomaker_750"
+        ],
         "childIds": [],
         "bio": ""
     },
@@ -795,11 +803,65 @@
             "helen_nora_shomaker_750"
         ],
         "siblingIds": [],
-        "childIds": [],
+        "childIds": [
+            "leland_eugene_norton_689"
+        ],
         "bio": ""
     },
     "leland_eugene_norton_689": {
         "name": "Leland Eugene Norton",
+        "dob": "1/4/1950",
+        "pob": "",
+        "dod": "7/28/2017",
+        "pod": "",
+        "cemetery": "Mt. Zion Cemetery",
+        "cemeteryLocation": "Winona, MO",
+        "fatherId": "gene_edward_norton_544",
+        "motherId": "helen_nora_shomaker_750",
+        "spouseIds": [
+            "rita_gale_brawley_250"
+        ],
+        "siblingIds": [],
+        "childIds": [
+            "aaron_norton_887",
+            "carla_norton_817"
+        ],
+        "bio": ""
+    },
+    "rita_gale_brawley_250": {
+        "name": "Rita Gale Brawley",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [
+            "leland_eugene_norton_689"
+        ],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "aaron_norton_887": {
+        "name": "Aaron Norton",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "carla_norton_817": {
+        "name": "Carla Norton",
         "dob": "",
         "pob": "",
         "dod": "",
