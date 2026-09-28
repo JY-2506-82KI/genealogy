@@ -195,8 +195,8 @@
         "pod": "Birch Tree, MO",
         "cemetery": "Oak Grove Cemetery",
         "cemeteryLocation": "Birch Tree, MO",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "joseph_henry_clemons_659",
+        "motherId": "perlina_jane_mayberry_785",
         "spouseIds": [
             "marvin_yates_226"
         ],
@@ -1532,6 +1532,40 @@
         "siblingIds": [],
         "childIds": [
             "mary_jane_denning_537"
+        ],
+        "bio": ""
+    },
+    "joseph_henry_clemons_659": {
+        "name": "Joseph Henry Clemons",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "dolly_e_clemons_265"
+        ],
+        "bio": ""
+    },
+    "perlina_jane_mayberry_785": {
+        "name": "Perlina Jane Mayberry",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "dolly_e_clemons_265"
         ],
         "bio": ""
     }
