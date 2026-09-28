@@ -174,8 +174,8 @@
         "pod": "Springfield, MO",
         "cemetery": "Oak Grove Cemetery",
         "cemeteryLocation": "Birch Tree, MO",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "martin_yates_946",
+        "motherId": "mary_jane_denning_537",
         "spouseIds": [
             "dolly_e_clemons_265"
         ],
@@ -1372,6 +1372,40 @@
         ],
         "siblingIds": [],
         "childIds": [],
+        "bio": ""
+    },
+    "martin_yates_946": {
+        "name": "Martin Yates",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "marvin_yates_226"
+        ],
+        "bio": ""
+    },
+    "mary_jane_denning_537": {
+        "name": "Mary Jane Denning",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "marvin_yates_226"
+        ],
         "bio": ""
     }
 }
