@@ -1585,7 +1585,8 @@
         "siblingIds": [],
         "childIds": [
             "dolly_e_clemons_265",
-            "dolly_e_clemons_184"
+            "dolly_e_clemons_184",
+            "jackson_perry_clemons_442"
         ],
         "bio": ""
     },
@@ -1820,8 +1821,8 @@
         "pod": "",
         "cemetery": "",
         "cemeteryLocation": "",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "joseph_henry_clemons_659",
+        "motherId": "perlina_jane_mayberry_785",
         "spouseIds": [],
         "siblingIds": [],
         "childIds": [],
