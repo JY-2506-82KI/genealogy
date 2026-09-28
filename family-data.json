@@ -262,8 +262,8 @@
         "pod": "Shannon County, MO",
         "cemetery": "Mt. Zion Cemetery",
         "cemeteryLocation": "Winona, MO",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "charles_newton__charley__brawley_143",
+        "motherId": "drucilla_floyd_rook_689",
         "spouseIds": [
             "maudie_lee_vaugh_839"
         ],
@@ -959,7 +959,8 @@
         "spouseIds": [],
         "siblingIds": [],
         "childIds": [
-            "delbert_jackson_brawley_501"
+            "delbert_jackson_brawley_501",
+            "othur_herbert__buck__brawley_571"
         ],
         "bio": ""
     },
@@ -976,7 +977,8 @@
         "spouseIds": [],
         "siblingIds": [],
         "childIds": [
-            "delbert_jackson_brawley_501"
+            "delbert_jackson_brawley_501",
+            "othur_herbert__buck__brawley_571"
         ],
         "bio": ""
     },
@@ -1635,6 +1637,21 @@
         "childIds": [
             "rachel_helen_yardley_345"
         ],
+        "bio": ""
+    },
+    "charles_newton__charley__brawley_543": {
+        "name": "Charles Newton 'Charley' Brawley",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
         "bio": ""
     }
 }
