@@ -1398,14 +1398,14 @@
     },
     "mary_jane_denning_537": {
         "name": "Mary Jane Denning",
-        "dob": "",
-        "pob": "",
-        "dod": "",
-        "pod": "",
-        "cemetery": "",
-        "cemeteryLocation": "",
-        "fatherId": "",
-        "motherId": "",
+        "dob": "10/30/1891",
+        "pob": "Shannon County, MO",
+        "dod": "3/28/1919",
+        "pod": "Shannon County, MO",
+        "cemetery": "Snider Family Cemetery",
+        "cemeteryLocation": "Low Wassie, MO",
+        "fatherId": "perry_denning_967",
+        "motherId": "mary_catherine_norris_831",
         "spouseIds": [
             "martin_yates_946"
         ],
@@ -1480,6 +1480,55 @@
         ],
         "siblingIds": [],
         "childIds": [],
+        "bio": ""
+    },
+    "perry_denning_967": {
+        "name": "Perry Denning",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "mary_jane_denning_537"
+        ],
+        "bio": ""
+    },
+    "mahala_jane_mayberry_843": {
+        "name": "Mahala Jane Mayberry",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "mary_catherine_norris_831": {
+        "name": "Mary Catherine Norris",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "mary_jane_denning_537"
+        ],
         "bio": ""
     }
 }
