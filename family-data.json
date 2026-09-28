@@ -177,7 +177,8 @@
         "fatherId": "martin_yates_946",
         "motherId": "mary_jane_denning_537",
         "spouseIds": [
-            "dolly_e_clemons_265"
+            "dolly_e_clemons_265",
+            "dolly_e_clemons_184"
         ],
         "siblingIds": [
             "mary_jane_yates_485"
@@ -1583,7 +1584,8 @@
         ],
         "siblingIds": [],
         "childIds": [
-            "dolly_e_clemons_265"
+            "dolly_e_clemons_265",
+            "dolly_e_clemons_184"
         ],
         "bio": ""
     },
@@ -1857,17 +1859,23 @@
     },
     "dolly_e_clemons_184": {
         "name": "Dolly E Clemons",
-        "dob": "",
-        "pob": "",
-        "dod": "",
-        "pod": "",
-        "cemetery": "",
-        "cemeteryLocation": "",
-        "fatherId": "",
-        "motherId": "",
-        "spouseIds": [],
+        "dob": "9/3/1911",
+        "pob": "Winona, MO",
+        "dod": "11/24/2002",
+        "pod": "Birch Tree, MO",
+        "cemetery": "Oak Grove Cemetery",
+        "cemeteryLocation": "Birch Tree, MO",
+        "fatherId": "joseph_henry_clemons_659",
+        "motherId": "perlina_jane_mayberry_785",
+        "spouseIds": [
+            "marvin_yates_226"
+        ],
         "siblingIds": [],
-        "childIds": [],
+        "childIds": [
+            "freddy_d_yates_591",
+            "marvin_howard_yates_228",
+            "nanette_yates_872"
+        ],
         "bio": ""
     },
     "alta_clemons_598": {
