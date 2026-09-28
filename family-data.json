@@ -240,8 +240,8 @@
         "pod": "Winona, MO",
         "cemetery": "Pine Lawn Cemetery",
         "cemeteryLocation": "Winona, MO",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "joseph_william__doc__yardley_739",
+        "motherId": "nora_patty_pulliam_712",
         "spouseIds": [
             "theodore__ted__shomaker_670"
         ],
@@ -1600,6 +1600,40 @@
         "siblingIds": [],
         "childIds": [
             "theodore__ted__shomaker_670"
+        ],
+        "bio": ""
+    },
+    "joseph_william__doc__yardley_739": {
+        "name": "Joseph William 'Doc' Yardley",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "rachel_helen_yardley_345"
+        ],
+        "bio": ""
+    },
+    "nora_patty_pulliam_712": {
+        "name": "Nora Patty Pulliam",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
+        "siblingIds": [],
+        "childIds": [
+            "rachel_helen_yardley_345"
         ],
         "bio": ""
     }
