@@ -130,7 +130,8 @@
             "ronald_dean_brawley_401"
         ],
         "siblingIds": [
-            "joyce_ann_blunk_345"
+            "joyce_ann_blunk_345",
+            "joe_auda_blunk_496"
         ],
         "childIds": [
             "p2_dummy"
@@ -289,7 +290,8 @@
         "childIds": [
             "judy_alice_blunk_758",
             "joyce_ann_blunk_345",
-            "joe_auda_blunk_496"
+            "joe_auda_blunk_496",
+            "jack_blunk_126"
         ],
         "bio": ""
     },
@@ -366,7 +368,8 @@
         "motherId": "lina_evelyn_benton_537",
         "spouseIds": [],
         "siblingIds": [
-            "judy_alice_blunk_758"
+            "judy_alice_blunk_758",
+            "joe_auda_blunk_496"
         ],
         "childIds": [],
         "bio": ""
@@ -438,6 +441,21 @@
         "spouseIds": [
             "joe_auda_blunk_496"
         ],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "jack_blunk_126": {
+        "name": "Jack Blunk",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
         "siblingIds": [],
         "childIds": [],
         "bio": ""
