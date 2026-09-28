@@ -1858,24 +1858,18 @@
         "bio": ""
     },
     "dolly_e_clemons_184": {
-        "name": "Dolly E Clemons",
-        "dob": "9/3/1911",
-        "pob": "Winona, MO",
-        "dod": "11/24/2002",
-        "pod": "Birch Tree, MO",
-        "cemetery": "Oak Grove Cemetery",
-        "cemeteryLocation": "Birch Tree, MO",
-        "fatherId": "joseph_henry_clemons_659",
-        "motherId": "perlina_jane_mayberry_785",
-        "spouseIds": [
-            "marvin_yates_226"
-        ],
+        "name": "",
+        "dob": "",
+        "pob": "",
+        "dod": "",
+        "pod": "",
+        "cemetery": "",
+        "cemeteryLocation": "",
+        "fatherId": "",
+        "motherId": "",
+        "spouseIds": [],
         "siblingIds": [],
-        "childIds": [
-            "freddy_d_yates_591",
-            "marvin_howard_yates_228",
-            "nanette_yates_872"
-        ],
+        "childIds": [],
         "bio": ""
     },
     "alta_clemons_598": {
