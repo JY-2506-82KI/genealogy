@@ -219,7 +219,8 @@
         ],
         "siblingIds": [],
         "childIds": [
-            "dessie_clara_shomaker_844"
+            "dessie_clara_shomaker_844",
+            "cecil_e_yardley_328"
         ],
         "bio": ""
     },
@@ -689,7 +690,24 @@
         "bio": ""
     },
     "cecil_e_yardley_328": {
-        "name": "Cecil E Yardley",
+        "name": "Cecil E Shomaker",
+        "dob": "1/6/1926",
+        "pob": "Winona, MO",
+        "dod": "10/5/1995",
+        "pod": "McKenzie, Tennessee",
+        "cemetery": "Mount Olivet Cemetery",
+        "cemeteryLocation": "",
+        "fatherId": "theodore__ted__shomaker_670",
+        "motherId": "goldie_l_yardley_350",
+        "spouseIds": [
+            "virginia_caldwell_402"
+        ],
+        "siblingIds": [],
+        "childIds": [],
+        "bio": ""
+    },
+    "virginia_caldwell_402": {
+        "name": "Virginia Caldwell",
         "dob": "",
         "pob": "",
         "dod": "",
@@ -698,7 +716,9 @@
         "cemeteryLocation": "",
         "fatherId": "",
         "motherId": "",
-        "spouseIds": [],
+        "spouseIds": [
+            "cecil_e_yardley_328"
+        ],
         "siblingIds": [],
         "childIds": [],
         "bio": ""
