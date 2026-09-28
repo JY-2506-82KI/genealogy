@@ -1593,7 +1593,8 @@
             "jessie_inez_clemons_206",
             "jackson_perry_clemons_442",
             "mary_mae_clemons_185",
-            "alta_clemons_598"
+            "alta_clemons_598",
+            "john_m_vanwinkle_501"
         ],
         "bio": ""
     },
@@ -1943,8 +1944,8 @@
         "pod": "",
         "cemetery": "",
         "cemeteryLocation": "",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "jim_david_vanwinkle_154",
+        "motherId": "perlina_jane_mayberry_785",
         "spouseIds": [],
         "siblingIds": [],
         "childIds": [],
