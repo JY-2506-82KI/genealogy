@@ -1020,7 +1020,7 @@ function renderTree() {
     }
     
     // Build strict positional generation slots (Binary Pedigree Mapping)
-    let maxDepth = 3; // 0: Anchor, 1: Parents, 2: Grandparents, 3: Great-Grandparents
+    let maxDepth = 4; // 0: Anchor, 1: Parents, 2: Grandparents, 3: Great-Grandparents, 4: Great-Great-Grandparents
     let generations = [];
     let currentLevel = [currentRootId];
     generations.push([...currentLevel]);
