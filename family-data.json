@@ -274,7 +274,8 @@
         ],
         "siblingIds": [],
         "childIds": [
-            "ronald_dean_brawley_401"
+            "ronald_dean_brawley_401",
+            "william_keith__bill__brawley_315"
         ],
         "bio": ""
     },
@@ -568,10 +569,13 @@
         "pod": "",
         "cemetery": "",
         "cemeteryLocation": "",
-        "fatherId": "",
-        "motherId": "",
+        "fatherId": "othur_herbert__buck__brawley_571",
+        "motherId": "maudie_lee_vaugh_839",
         "spouseIds": [],
-        "siblingIds": [],
+        "siblingIds": [
+            "ronald_dean_brawley_401",
+            "allen_dwain_brawley_787"
+        ],
         "childIds": [],
         "bio": ""
     },
